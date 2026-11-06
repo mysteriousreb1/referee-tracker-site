@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rejoindre la bêta — Referee Tracker</title>
+  <meta name="description" content="Demande ton accès à la bêta de Referee Tracker : on configure ton compte pour ta zone et ton niveau.">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#0A1F44">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; connect-src 'self' https://jlstedchnmdteazuqbly.supabase.co; object-src 'none'; base-uri 'none'; form-action 'self'">
+  <link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="img/logo-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Referee Tracker — accueil">
+      <img src="img/logo-icon.png" alt="" width="36" height="33">
+      <span>REFEREE TRACKER</span>
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="btn btn-outline btn-sm" href="https://app.referee-tracker.fr">Ouvrir l'app</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu" class="page-form">
+  <div class="wrap form-shell">
+    <div class="form-intro">
+      <h1>Rejoindre la bêta</h1>
+      <p>Quatre étapes, cinq minutes. On configure ensuite ton compte à la main pour ta zone et ton niveau.</p>
+    </div>
+
+    <div class="progress" id="progress" aria-label="Progression">
+      <ol>
+        <li class="active" data-step="1"><b>1</b><span>Identité</span></li>
+        <li data-step="2"><b>2</b><span>Convocations</span></li>
+        <li data-step="3"><b>3</b><span>Historique</span></li>
+        <li data-step="4"><b>4</b><span>Accord</span></li>
+      </ol>
+      <div class="bar" role="progressbar" aria-valuemin="1" aria-valuemax="4" aria-valuenow="1" aria-label="Étape 1 sur 4"><span id="bar"></span></div>
+    </div>
+
+    <form id="form" class="panel" novalidate autocomplete="on">
+
+      <!-- ÉTAPE 1 -->
+      <section class="step-panel" data-panel="1" aria-labelledby="h-1">
+        <h2 id="h-1">Qui es-tu ?</h2>
+        <p class="help">Ces informations servent à créer ton compte et à reconnaître ton nom sur les convocations.</p>
+
+        <div class="grid2">
+          <div class="field">
+            <label for="prenom">Prénom</label>
+            <input class="input" id="prenom" name="prenom" type="text" autocomplete="given-name" required maxlength="60" placeholder="Julie">
+            <p class="err" id="err-prenom"></p>
+          </div>
+          <div class="field">
+            <label for="telephone">Téléphone <span class="opt">(facultatif)</span></label>
+            <input class="input" id="telephone" name="telephone" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="06 12 34 56 78">
+            <p class="err" id="err-telephone"></p>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="nom_ffbb">NOM et prénom FFBB</label>
+          <input class="input" id="nom_ffbb" name="nom_ffbb" type="text" autocomplete="off" required maxlength="80" placeholder="MARTIN JULIE" style="text-transform:uppercase">
+          <small>Exactement comme sur tes convocations, en majuscules. Ex. : <strong>MARTIN JULIE</strong>. C'est ce qui permet à l'app de te reconnaître parmi les arbitres désignés.</small>
+          <p class="err" id="err-nom_ffbb"></p>
+        </div>
+
+        <div class="field">
+          <label for="email_connexion">E-mail de connexion</label>
+          <input class="input" id="email_connexion" name="email_connexion" type="email" autocomplete="email" inputmode="email" required maxlength="120" placeholder="julie.martin@exemple.fr">
+          <small>Pour te connecter à l'app et recevoir ton code de première connexion.</small>
+          <p class="err" id="err-email_connexion"></p>
+        </div>
+
+        <div class="actions">
+          <button type="button" class="btn btn-gold" data-next>Continuer</button>
+        </div>
+      </section>
+
+      <!-- ÉTAPE 2 -->
+      <section class="step-panel" data-panel="2" hidden aria-labelledby="h-2">
+        <h2 id="h-2">Tes convocations</h2>
+        <p class="help">Pour configurer la lecture des convocations, les barèmes et les échéances de paiement de ta zone.</p>
+
+        <fieldset>
+          <legend>Réception</legend>
+          <div class="field">
+            <label for="email_ffbb">E-mail qui reçoit tes convocations</label>
+            <input class="input" id="email_ffbb" name="email_ffbb" type="email" inputmode="email" required maxlength="120" placeholder="Souvent le même que l'e-mail de connexion">
+            <small>L'adresse enregistrée à la FFBB, sur laquelle arrivent tes désignations.</small>
+            <p class="err" id="err-email_ffbb"></p>
+          </div>
+          <div class="field">
+            <label for="fournisseur_mail">Fournisseur de cette messagerie</label>
+            <select class="input" id="fournisseur_mail" name="fournisseur_mail" required>
+              <option value="">Choisir…</option>
+              <option value="gmail">Gmail</option>
+              <option value="orange">Orange</option>
+              <option value="outlook">Outlook / Hotmail</option>
+              <option value="icloud">iCloud</option>
+              <option value="autre">Autre</option>
+            </select>
+            <small>On t'enverra le mode d'emploi du transfert automatique adapté à ta messagerie.</small>
+            <p class="err" id="err-fournisseur_mail"></p>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Niveau</legend>
+          <div class="field">
+            <label for="niveau">Niveau d'arbitrage principal</label>
+            <select class="input" id="niveau" name="niveau" required>
+              <option value="">Choisir…</option>
+              <option value="departemental">Départemental</option>
+              <option value="regional3">Régional 3</option>
+              <option value="regional2">Régional 2 – JPR</option>
+              <option value="regional1">Régional 1</option>
+              <option value="cf">Championnat de France</option>
+              <option value="haut_niveau">Haut niveau</option>
+            </select>
+            <p class="err" id="err-niveau"></p>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Zones de paiement</legend>
+          <div class="grid2">
+            <div class="field">
+              <label for="cd">Comité départemental</label>
+              <select class="input" id="cd" name="cd" required>
+                <option value="">Choisir…</option>
+                <option value="CD67">CD67 — Bas-Rhin</option>
+                <option value="CD68">CD68 — Haut-Rhin</option>
+                <option value="CD54">CD54 — Meurthe-et-Moselle</option>
+                <option value="CD55">CD55 — Meuse</option>
+                <option value="CD57">CD57 — Moselle</option>
+                <option value="CD88">CD88 — Vosges</option>
+                <option value="CD08">CD08 — Ardennes</option>
+                <option value="CD10">CD10 — Aube</option>
+                <option value="CD51">CD51 — Marne</option>
+                <option value="CD52">CD52 — Haute-Marne</option>
+                <option value="AUTRE">Autre</option>
+              </select>
+              <p class="err" id="err-cd"></p>
+            </div>
+            <div class="field">
+              <label for="ligue">Ligue régionale</label>
+              <select class="input" id="ligue" name="ligue" required>
+                <option value="LRGEB" selected>Grand Est (LRGEB)</option>
+                <option value="ARA">Auvergne-Rhône-Alpes</option>
+                <option value="BFC">Bourgogne-Franche-Comté</option>
+                <option value="BRE">Bretagne</option>
+                <option value="CVL">Centre-Val de Loire</option>
+                <option value="COR">Corse</option>
+                <option value="HDF">Hauts-de-France</option>
+                <option value="IDF">Île-de-France</option>
+                <option value="NOR">Normandie</option>
+                <option value="NAQ">Nouvelle-Aquitaine</option>
+                <option value="OCC">Occitanie</option>
+                <option value="PDL">Pays de la Loire</option>
+                <option value="PACA">Provence-Alpes-Côte d'Azur</option>
+                <option value="AUTRE">Autre</option>
+              </select>
+              <p class="err" id="err-ligue"></p>
+            </div>
+          </div>
+          <div class="field" id="f-cd-autre" hidden>
+            <label for="cd_autre">Précise ton comité</label>
+            <input class="input" id="cd_autre" name="cd_autre" type="text" maxlength="60" placeholder="ex. CD25 Doubs">
+          </div>
+          <label class="check">
+            <input type="checkbox" id="cf" name="cf">
+            <span>J'arbitre en <strong>Championnat de France</strong> (payé par la FFBB)</span>
+          </label>
+        </fieldset>
+
+        <div class="actions">
+          <button type="button" class="btn btn-ghost" data-prev>Retour</button>
+          <button type="button" class="btn btn-gold" data-next>Continuer</button>
+        </div>
+      </section>
+
+      <!-- ÉTAPE 3 -->
+      <section class="step-panel" data-panel="3" hidden aria-labelledby="h-3">
+        <h2 id="h-3">Ton historique et tes trajets</h2>
+        <p class="help">Pour démarrer avec ta saison déjà remplie et des kilomètres justes.</p>
+
+        <fieldset>
+          <legend>Convocations passées <span class="opt" style="font-weight:500;color:var(--muted)">(facultatif mais recommandé)</span></legend>
+          <div class="info">Dépose ici les PDF de tes convocations de la saison (ou des saisons précédentes). Sans eux, l'app ne verra que les convocations à venir.</div>
+          <div class="drop" id="drop">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4"/><path d="m7 9 5-5 5 5"/><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>
+            <p>Glisse tes PDF ici</p>
+            <label class="btn btn-navy btn-sm" for="fichiers">Choisir des fichiers<input type="file" id="fichiers" accept="application/pdf,.pdf" multiple></label>
+            <small style="display:block;margin-top:10px;color:var(--muted)">PDF uniquement · 20 Mo max par fichier · jusqu'à 300 fichiers</small>
+          </div>
+          <p class="files-count" id="files-count" aria-live="polite"></p>
+          <ul class="files" id="files" aria-label="Fichiers sélectionnés"></ul>
+          <p class="err" id="err-fichiers"></p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Adresse de départ</legend>
+          <div class="field">
+            <label for="adresse">Adresse</label>
+            <input class="input" id="adresse" name="adresse" type="text" autocomplete="street-address" required maxlength="120" placeholder="12 rue des Sports">
+            <p class="err" id="err-adresse"></p>
+          </div>
+          <div class="grid2">
+            <div class="field">
+              <label for="code_postal">Code postal</label>
+              <input class="input" id="code_postal" name="code_postal" type="text" inputmode="numeric" autocomplete="postal-code" required maxlength="5" pattern="[0-9]{5}" placeholder="67500">
+              <p class="err" id="err-code_postal"></p>
+            </div>
+            <div class="field">
+              <label for="ville">Ville</label>
+              <input class="input" id="ville" name="ville" type="text" autocomplete="address-level2" required maxlength="80" placeholder="Haguenau">
+              <p class="err" id="err-ville"></p>
+            </div>
+          </div>
+          <small class="muted">Point de départ de tes trajets vers les salles. Tu pourras le modifier dans l'app.</small>
+        </fieldset>
+
+        <fieldset>
+          <legend>Véhicule <span class="opt" style="font-weight:500;color:var(--muted)">(facultatif)</span></legend>
+          <div class="grid3">
+            <div class="field">
+              <label for="vehicule_modele">Modèle</label>
+              <input class="input" id="vehicule_modele" name="vehicule_modele" type="text" maxlength="60" placeholder="Peugeot 208">
+            </div>
+            <div class="field">
+              <label for="vehicule_conso">Conso L/100</label>
+              <input class="input" id="vehicule_conso" name="vehicule_conso" type="number" inputmode="decimal" min="1" max="30" step="0.1" placeholder="5.6">
+              <p class="err" id="err-vehicule_conso"></p>
+            </div>
+            <div class="field">
+              <label for="vehicule_cv">CV fiscaux</label>
+              <input class="input" id="vehicule_cv" name="vehicule_cv" type="number" inputmode="numeric" min="1" max="30" step="1" placeholder="5">
+              <p class="err" id="err-vehicule_cv"></p>
+            </div>
+          </div>
+          <small class="muted">Sert au calcul du coût réel de tes déplacements (barème kilométrique).</small>
+        </fieldset>
+
+        <div class="actions">
+          <button type="button" class="btn btn-ghost" data-prev>Retour</button>
+          <button type="button" class="btn btn-gold" data-next>Continuer</button>
+        </div>
+      </section>
+
+      <!-- ÉTAPE 4 -->
+      <section class="step-panel" data-panel="4" hidden aria-labelledby="h-4">
+        <h2 id="h-4">Dernière étape</h2>
+        <p class="help">Vérifie et valide : on s'occupe du reste.</p>
+
+        <dl class="recap" id="recap" aria-label="Récapitulatif"></dl>
+
+        <label class="check">
+          <input type="checkbox" id="consent_cgu" name="consent_cgu" required>
+          <span>J'accepte les <a href="https://app.referee-tracker.fr/cgu.html" target="_blank" rel="noopener">Conditions d'utilisation</a> et la <a href="https://app.referee-tracker.fr/confidentialite.html" target="_blank" rel="noopener">Politique de confidentialité</a>.</span>
+        </label>
+        <p class="err" id="err-consent_cgu"></p>
+        <label class="check">
+          <input type="checkbox" id="consent_donnees" name="consent_donnees" required>
+          <span>J'accepte que mes convocations et mes évaluations soient traitées pour configurer et faire fonctionner mon compte.</span>
+        </label>
+        <p class="err" id="err-consent_donnees"></p>
+
+        <div class="alert" id="alert-global" hidden role="alert"></div>
+
+        <div class="upload-progress" id="upload-progress" hidden>
+          <div class="bar"><span id="upload-bar"></span></div>
+          <p id="upload-text" aria-live="polite">Envoi en cours…</p>
+        </div>
+
+        <div class="actions">
+          <button type="button" class="btn btn-ghost" data-prev>Retour</button>
+          <button type="submit" class="btn btn-gold" id="btn-envoyer">Envoyer ma demande</button>
+        </div>
+      </section>
+
+      <!-- CONFIRMATION -->
+      <section class="step-panel done" data-panel="5" hidden aria-labelledby="h-5">
+        <div class="big" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h2 id="h-5">Demande envoyée !</h2>
+        <p>Nous configurons ton compte : tu recevras un e-mail avec <strong>ton code de première connexion</strong> dès qu'il sera prêt.</p>
+        <p class="muted" id="done-mail"></p>
+        <div class="fail" id="done-fail" hidden>
+          <div class="alert">Certains fichiers n'ont pas pu être envoyés :</div>
+          <ul id="done-fail-list"></ul>
+          <button type="button" class="btn btn-navy btn-sm" id="btn-retry">Réessayer l'envoi des fichiers</button>
+        </div>
+        <p style="margin-top:24px"><a class="btn btn-ghost" href="./">Retour à l'accueil</a></p>
+      </section>
+    </form>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <strong style="color:#fff">Referee Tracker</strong><br>
+      <span class="legal">Projet indépendant, non affilié à la FFBB. Bêta 2026-2027.</span>
+    </div>
+    <nav aria-label="Liens légaux">
+      <a href="https://app.referee-tracker.fr/confidentialite.html">Confidentialité</a>
+      <a href="https://app.referee-tracker.fr/cgu.html">Conditions d'utilisation</a>
+      <a href="mailto:contact@referee-tracker.fr">contact@referee-tracker.fr</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

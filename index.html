@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Referee Tracker — L'assistant des arbitres de basket</title>
+  <meta name="description" content="Referee Tracker lit tes convocations FFBB, calcule tes kilomètres et indemnités, suit tes paiements et te rappelle tes matchs. Gratuit pendant la bêta.">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#0A1F44">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'">
+  <link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="img/logo-icon.png">
+  <link rel="canonical" href="https://www.referee-tracker.fr/">
+  <meta property="og:title" content="Referee Tracker — L'assistant des arbitres de basket">
+  <meta property="og:description" content="Transfère tes convocations, l'app fait le reste : matchs, kilomètres, indemnités, paiements, agenda.">
+  <meta property="og:image" content="https://www.referee-tracker.fr/img/logo-wordmark.png">
+  <meta property="og:url" content="https://www.referee-tracker.fr/">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Referee Tracker — accueil">
+      <img src="img/logo-icon.png" alt="" width="36" height="33">
+      <span>REFEREE TRACKER</span>
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="btn btn-outline btn-sm" href="https://app.referee-tracker.fr">Ouvrir l'app</a>
+      <a class="btn btn-gold btn-sm" href="inscription.html">Rejoindre la bêta</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+
+  <!-- ===== HÉROS ===== -->
+  <section class="hero" aria-labelledby="titre-hero">
+    <div class="wrap hero-grid">
+      <div>
+        <img class="hero-logo" src="img/logo-wordmark.png" alt="Referee Tracker" width="640" height="243">
+        <span class="pill">Bêta ouverte · arbitres FFBB</span>
+        <h1 id="titre-hero">Tes convocations, <span class="accent">lues et suivies</span> à ta place.</h1>
+        <p class="lead">Transfère tes convocations par e-mail : Referee Tracker en extrait chaque match, calcule tes kilomètres et tes indemnités, surveille tes paiements et te rappelle tes rendez-vous.</p>
+        <div class="cta-row">
+          <a class="btn btn-gold" href="inscription.html">Rejoindre la bêta</a>
+          <a class="btn btn-outline" href="https://app.referee-tracker.fr">Ouvrir l'app</a>
+        </div>
+        <p class="hero-note">Gratuit pendant la bêta · Aucun accès à ta boîte mail · Conçu par un arbitre, pour les arbitres.</p>
+      </div>
+
+      <div class="phone" aria-hidden="true">
+        <div class="screen">
+          <div class="sc-head"><strong>Ce week-end</strong><img src="img/logo-icon.png" alt=""></div>
+          <div class="card">
+            <div class="t"><span>SAM 14 · 20h30</span><span>42 km</span></div>
+            <div class="s">U17 M Région 1 · Strasbourg vs Haguenau</div>
+          </div>
+          <div class="card navy">
+            <div class="t"><span>DIM 15 · 15h30</span><span>68 km</span></div>
+            <div class="s">NF3 · Sélestat vs Épinal · 2e arbitre</div>
+          </div>
+          <div class="card red">
+            <div class="t"><span>Annulé</span><span>—</span></div>
+            <div class="s">U15 F · Molsheim vs Obernai (report)</div>
+          </div>
+          <div class="kpis">
+            <div class="kpi"><b>23</b><span>matchs</span></div>
+            <div class="kpi"><b>1 480</b><span>km</span></div>
+            <div class="kpi"><b>92 %</b><span>payé</span></div>
+          </div>
+          <div class="card">
+            <div class="t"><span>Paiement CD67</span><span>attendu</span></div>
+            <div class="s">Échéance : fin de mois · 6 matchs</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COMMENT ÇA MARCHE ===== -->
+  <section id="comment" aria-labelledby="titre-comment">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Comment ça marche</span>
+        <h2 id="titre-comment">Trois étapes, zéro saisie.</h2>
+        <p>Tu continues à recevoir tes convocations comme aujourd'hui. Tu les transfères, c'est tout.</p>
+      </div>
+      <div class="steps">
+        <article class="step">
+          <span class="num" aria-hidden="true">1</span>
+          <h3>Transfère tes convocations</h3>
+          <p>Une règle de transfert dans ta messagerie envoie automatiquement chaque convocation vers ton adresse Referee Tracker personnelle.</p>
+        </article>
+        <article class="step">
+          <span class="num" aria-hidden="true">2</span>
+          <h3>L'app lit tout</h3>
+          <p>Date, lieu, équipes, niveau, rôle, annulations et reports : chaque e-mail est analysé et transformé en fiche de match.</p>
+        </article>
+        <article class="step">
+          <span class="num" aria-hidden="true">3</span>
+          <h3>Tu suis matchs, km, paiements</h3>
+          <p>Ton agenda, tes trajets, tes indemnités et l'état de chaque paiement sont à jour sur ton téléphone, sans rien saisir.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ATOUTS ===== -->
+  <section id="atouts" aria-labelledby="titre-atouts">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Ce que fait Referee Tracker</span>
+        <h2 id="titre-atouts">Tout ce qu'un arbitre gère à côté du terrain.</h2>
+      </div>
+      <div class="cards">
+        <article class="card-f">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="m4 7 8 6 8-6"/></svg></div>
+          <h3>Lecture automatique des convocations</h3>
+          <p>Convocations 5x5 et 3x3 reconnues, y compris les modifications, reports et annulations. Chaque match devient une fiche complète.</p>
+        </article>
+        <article class="card-f">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h3l3-7 4 14 3-7h5"/></svg></div>
+          <h3>Kilomètres et indemnités exacts</h3>
+          <p>Distance depuis ton adresse de départ, barème de ton niveau et de ta zone : tu sais ce que chaque match te rapporte avant d'y aller.</p>
+        </article>
+        <article class="card-f">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 10h20"/><path d="M6 15h4"/></svg></div>
+          <h3>Suivi des paiements et échéances</h3>
+          <p>Comité, ligue, FFBB : chaque payeur a son calendrier. Tu vois ce qui est attendu, ce qui est en retard et ce qui est réglé.</p>
+        </article>
+        <article class="card-f">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18"/><path d="M8 2v4M16 2v4"/><path d="m9 15 2 2 4-4"/></svg></div>
+          <h3>Agenda sur ton téléphone</h3>
+          <p>Tes matchs à venir, adresse de la salle, heure de convocation et trajet. Ajoutable sur l'écran d'accueil comme une vraie app.</p>
+        </article>
+        <article class="card-f">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10 21a2 2 0 0 0 4 0"/></svg></div>
+          <h3>Notifications utiles</h3>
+          <p>Nouveau match, annulation, rappel la veille : tu es prévenu au bon moment, sans devoir rouvrir ta boîte mail.</p>
+        </article>
+        <article class="card-f">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M9 7h7M9 11h5"/></svg></div>
+          <h3>Règlement et QCM avec IA</h3>
+          <p>Pose une question de règle, obtiens la réponse sourcée dans le règlement officiel. Entraîne-toi au QCM pour tes examens.</p>
+        </article>
+        <article class="card-f">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l5-5 4 4 8-8"/><path d="M14 8h6v6"/></svg></div>
+          <h3>Évaluations et progression</h3>
+          <p>Retrouve tes rapports d'observation, suis tes axes de progrès d'une saison à l'autre et prépare tes prochaines montées.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SUR MESURE ===== -->
+  <section id="zones" aria-labelledby="titre-zones">
+    <div class="wrap">
+      <div class="zones">
+        <div>
+          <span class="eyebrow" style="color:var(--gold)">Sur mesure</span>
+          <h2 id="titre-zones">Configuré pour ta zone.</h2>
+          <p>Les barèmes, les échéances de paiement et les répartiteurs changent selon qui te convoque. Au moment de l'inscription, tu indiques ton comité, ta ligue et si tu arbitres en Championnat de France : l'app est réglée pour toi avant ta première connexion.</p>
+        </div>
+        <ul>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            <div><b>Comité départemental</b><span>Barème et calendrier de paiement de ton CD (CD67, CD68, CD57…).</span></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            <div><b>Ligue régionale</b><span>Matchs régionaux et indemnités de la ligue (Grand Est par défaut, toutes les ligues disponibles).</span></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            <div><b>Championnat de France</b><span>Désignations nationales payées par la FFBB, avec leur propre échéancier.</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BÊTA ===== -->
+  <section id="beta" class="beta" aria-labelledby="titre-beta">
+    <div class="wrap">
+      <div class="beta-box">
+        <span class="eyebrow">Bêta</span>
+        <h2 id="titre-beta">Gratuit pendant la bêta.</h2>
+        <p class="muted">Referee Tracker est en phase de test avec un nombre limité d'arbitres. En échange, on compte sur tes retours pour l'améliorer.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Compte personnel configuré à la main pour ta zone et ton niveau</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Import de tes convocations passées pour démarrer avec ton historique</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Support direct par e-mail et prise en compte rapide de tes remarques</span></li>
+        </ul>
+        <a class="btn btn-navy" href="inscription.html">Demander mon accès</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section id="faq" aria-labelledby="titre-faq">
+    <div class="wrap">
+      <div class="section-head" style="margin-inline:auto;text-align:center">
+        <span class="eyebrow">Questions fréquentes</span>
+        <h2 id="titre-faq">Ce qu'on nous demande souvent.</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Referee Tracker accède-t-il à ma boîte mail ?</summary>
+          <p>Non, jamais. Tu transfères toi-même tes convocations (ou tu crées une règle de transfert automatique dans ta messagerie) vers ton adresse Referee Tracker. Nous ne voyons que ce que tu nous envoies.</p>
+        </details>
+        <details>
+          <summary>Où sont stockées mes données et qui peut les voir ?</summary>
+          <p>Tes convocations et tes données de match sont stockées en Europe, chiffrées en transit, et visibles uniquement par toi via ton compte. Elles servent exclusivement à faire fonctionner ton suivi. Détails dans la <a href="https://app.referee-tracker.fr/confidentialite.html">politique de confidentialité</a>.</p>
+        </details>
+        <details>
+          <summary>Puis-je supprimer mon compte et mes données ?</summary>
+          <p>Oui, à tout moment, sur simple demande à <a href="mailto:contact@referee-tracker.fr">contact@referee-tracker.fr</a>. Tout est effacé, convocations et historique compris.</p>
+        </details>
+        <details>
+          <summary>Les montants affichés sont-ils officiels ?</summary>
+          <p>Ce sont des estimations calculées à partir des barèmes de ton comité, de ta ligue et de la FFBB. La convocation officielle et les documents de ta fédération restent la référence.</p>
+        </details>
+        <details>
+          <summary>Faut-il installer quelque chose ?</summary>
+          <p>Non : Referee Tracker fonctionne dans le navigateur de ton téléphone ou de ton ordinateur. Tu peux l'ajouter à ton écran d'accueil pour l'utiliser comme une app.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="Appel à l'inscription">
+    <div class="wrap">
+      <div class="cta-final">
+        <h2>Prêt à ne plus rien saisir ?</h2>
+        <p>Demande ton accès à la bêta : on configure ton compte et tu reçois ton code de première connexion par e-mail.</p>
+        <a class="btn btn-gold" href="inscription.html">Rejoindre la bêta</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <strong style="color:#fff">Referee Tracker</strong><br>
+      <span class="legal">Projet indépendant, non affilié à la FFBB. Bêta 2026-2027.</span>
+    </div>
+    <nav aria-label="Liens légaux">
+      <a href="https://app.referee-tracker.fr/confidentialite.html">Confidentialité</a>
+      <a href="https://app.referee-tracker.fr/cgu.html">Conditions d'utilisation</a>
+      <a href="mailto:contact@referee-tracker.fr">contact@referee-tracker.fr</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
