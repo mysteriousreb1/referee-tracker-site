@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-Disallow: /inscription.html
 Sitemap: https://www.referee-tracker.fr/sitemap.xml

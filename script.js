@@ -96,7 +96,7 @@
   form.addEventListener("input", (e) => { if (e.target.id) erreur(e.target.id, ""); });
   form.addEventListener("change", (e) => { if (e.target.id) erreur(e.target.id, ""); });
 
-  // NOM FFBB : forcer les majuscules
+  // NOM officiel : forcer les majuscules
   $("#nom_ffbb").addEventListener("blur", (e) => { e.target.value = e.target.value.toUpperCase().replace(/\s+/g, " ").trim(); });
   // Comité « Autre » : champ libre
   $("#cd").addEventListener("change", (e) => { $("#f-cd-autre").hidden = e.target.value !== "AUTRE"; });
@@ -150,7 +150,7 @@
   function remplirRecap() {
     const lignes = [
       ["Prénom", val("prenom")],
-      ["Nom FFBB", val("nom_ffbb")],
+      ["Nom officiel", val("nom_ffbb")],
       ["E-mail de connexion", val("email_connexion")],
       ["E-mail convocations", val("email_ffbb") + " (" + libelle("fournisseur_mail") + ")"],
       ["Niveau", libelle("niveau")],
@@ -263,18 +263,26 @@
     btnEnvoyer.innerHTML = '<span class="spinner" aria-hidden="true"></span> Envoi…';
     try {
       const rep = await appelFonction(payload());
-      dernierEnvoi = { inscription_id: rep.inscription_id, uploads: rep.uploads || [] };
+      dernierEnvoi = { inscription_id: rep.inscription_id, jeton: rep.jeton || "", uploads: rep.uploads || [] };
+      // b70 — places limitées : réponse « attente » → message liste d'attente, pas d'upload.
+      if (rep.attente) {
+        $("#h-5").textContent = "Tu es sur la liste d'attente";
+        $("#h-5").nextElementSibling.innerHTML = "Toutes les places de cette première vague sont prises. <strong>On te prévient par e-mail</strong> dès qu'une place se libère : rien à refaire de ton côté.";
+        $("#done-mail").textContent = "Confirmation envoyée à " + val("email_connexion") + ".";
+        afficher(5);
+        return;
+      }
       $("#done-mail").textContent = "E-mail de confirmation envoyé à " + val("email_connexion") + ".";
       if (fichiers.length && dernierEnvoi.uploads.length) {
         echecsCourants = await envoyerTousLesFichiers(dernierEnvoi.uploads, fichiers);
-        if (echecsCourants.length === 0) { try { await appelFonction({ action: "fichiers_ok", inscription_id: dernierEnvoi.inscription_id }); } catch (_) { /* non bloquant */ } }
+        if (echecsCourants.length === 0) { try { await appelFonction({ action: "fichiers_ok", inscription_id: dernierEnvoi.inscription_id, jeton: dernierEnvoi.jeton }); } catch (_) { /* non bloquant */ } }
       } else { echecsCourants = []; }
       afficher(5);
       afficherEchecs(echecsCourants);
     } catch (err) {
       const code = String(err && err.message || "");
       const msgs = {
-        TROP_TOT: "Une demande a déjà été envoyée avec cet e-mail il y a moins de 24 h. Si tu n'as rien reçu, écris-nous à contact@referee-tracker.fr.",
+        TROP_TOT: "Une demande a déjà été envoyée récemment (même e-mail ou même connexion). Si tu n'as rien reçu, écris-nous à contact@referee-tracker.fr.",
         VALIDATION: "Certaines informations sont invalides. Vérifie les étapes précédentes.",
         TROP_DE_FICHIERS: "Trop de fichiers : 300 maximum.",
       };
@@ -292,7 +300,7 @@
     $("[data-panel='5']").insertBefore(upWrap, $("#done-fail"));
     echecsCourants = await envoyerTousLesFichiers(dernierEnvoi.uploads, echecsCourants);
     afficherEchecs(echecsCourants);
-    if (!echecsCourants.length) { try { await appelFonction({ action: "fichiers_ok", inscription_id: dernierEnvoi.inscription_id }); } catch (_) { /* non bloquant */ } }
+    if (!echecsCourants.length) { try { await appelFonction({ action: "fichiers_ok", inscription_id: dernierEnvoi.inscription_id, jeton: dernierEnvoi.jeton }); } catch (_) { /* non bloquant */ } }
     b.disabled = false;
   });
 

@@ -3,17 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rejoindre la bêta — Referee Tracker</title>
-  <meta name="description" content="Demande ton accès à la bêta de Referee Tracker : on configure ton compte pour ta zone et ton niveau.">
+  <title>Demander un accès — Referee Tracker, application des arbitres de basket</title>
+  <meta name="description" content="Demande ton accès à Referee Tracker : on configure ton compte pour ta zone et ton niveau. Places limitées, gratuit.">
   <meta name="referrer" content="no-referrer">
   <meta name="theme-color" content="#0A1F44">
   <meta name="robots" content="noindex">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; connect-src 'self' https://jlstedchnmdteazuqbly.supabase.co; object-src 'none'; base-uri 'none'; form-action 'self'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; script-src 'self'; connect-src 'self' https://jlstedchnmdteazuqbly.supabase.co; object-src 'none'; base-uri 'none'; form-action 'self'">
   <link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="img/logo-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="stylesheet" href="style.css?v=b70">
 </head>
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
@@ -33,7 +32,7 @@
 <main id="contenu" class="page-form">
   <div class="wrap form-shell">
     <div class="form-intro">
-      <h1>Rejoindre la bêta</h1>
+      <h1>Demander un accès</h1>
       <p>Quatre étapes, cinq minutes. On configure ensuite ton compte à la main pour ta zone et ton niveau.</p>
     </div>
 
@@ -68,7 +67,7 @@
         </div>
 
         <div class="field">
-          <label for="nom_ffbb">NOM et prénom FFBB</label>
+          <label for="nom_ffbb">NOM et prénom, comme sur tes convocations</label>
           <input class="input" id="nom_ffbb" name="nom_ffbb" type="text" autocomplete="off" required maxlength="80" placeholder="MARTIN JULIE" style="text-transform:uppercase">
           <small>Exactement comme sur tes convocations, en majuscules. Ex. : <strong>MARTIN JULIE</strong>. C'est ce qui permet à l'app de te reconnaître parmi les arbitres désignés.</small>
           <p class="err" id="err-nom_ffbb"></p>
@@ -96,7 +95,7 @@
           <div class="field">
             <label for="email_ffbb">E-mail qui reçoit tes convocations</label>
             <input class="input" id="email_ffbb" name="email_ffbb" type="email" inputmode="email" required maxlength="120" placeholder="Souvent le même que l'e-mail de connexion">
-            <small>L'adresse enregistrée à la FFBB, sur laquelle arrivent tes désignations.</small>
+            <small>L'adresse enregistrée auprès de ta fédération, sur laquelle arrivent tes désignations.</small>
             <p class="err" id="err-email_ffbb"></p>
           </div>
           <div class="field">
@@ -179,7 +178,7 @@
           </div>
           <label class="check">
             <input type="checkbox" id="cf" name="cf">
-            <span>J'arbitre en <strong>Championnat de France</strong> (payé par la FFBB)</span>
+            <span>J'arbitre en <strong>Championnat de France</strong> (payé par virement national)</span>
           </label>
         </fieldset>
 
@@ -309,7 +308,7 @@
   <div class="wrap">
     <div>
       <strong style="color:#fff">Referee Tracker</strong><br>
-      <span class="legal">Projet indépendant, non affilié à la FFBB. Bêta 2026-2027.</span>
+      <span class="legal">Projet indépendant d'un arbitre, à but non lucratif, sans lien avec les instances du basket.</span>
     </div>
     <nav aria-label="Liens légaux">
       <a href="https://app.referee-tracker.fr/confidentialite.html">Confidentialité</a>
