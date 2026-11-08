@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.referee-tracker.fr/</loc><lastmod>2026-11-07</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://www.referee-tracker.fr/inscription.html</loc><lastmod>2026-11-07</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url><loc>https://www.referee-tracker.fr/</loc><lastmod>2026-11-08</lastmod><priority>1.0</priority>
+    <image:image><image:loc>https://www.referee-tracker.fr/img/app/accueil.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.referee-tracker.fr/img/app/paiements.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.referee-tracker.fr/img/app/stats.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.referee-tracker.fr/img/app/pc-accueil.webp</image:loc></image:image>
+  </url>
+  <url><loc>https://www.referee-tracker.fr/guides/</loc><lastmod>2026-11-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.referee-tracker.fr/guides/indemnites-arbitre-basket.html</loc><lastmod>2026-11-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.referee-tracker.fr/guides/organiser-saison-arbitre-basket.html</loc><lastmod>2026-11-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.referee-tracker.fr/inscription.html</loc><lastmod>2026-11-08</lastmod><priority>0.6</priority></url>
 </urlset>

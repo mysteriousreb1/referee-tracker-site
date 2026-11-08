@@ -3,12 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Referee Tracker — l'application des arbitres de basket : convocations, kilomètres, indemnités, paiements</title>
-  <meta name="description" content="Referee Tracker lit tes convocations d'arbitrage de basket, calcule tes kilomètres et tes indemnités, suit tes paiements, remplit ton agenda et t'entraîne au QCM. Gratuit, places limitées.">
-  <meta name="keywords" content="arbitre basket, application arbitre, convocations arbitrage, indemnités arbitre basket, kilomètres arbitre, suivi paiements arbitrage, agenda arbitre, QCM arbitre basket, règlement basket">
+  <title>Application arbitre de basket : convocations, indemnités, paiements | Referee Tracker</title>
+  <meta name="description" content="L'application des arbitres de basket : tes convocations lues automatiquement, kilomètres et indemnités calculés au centime, paiements suivis, agenda, QCM et règlement. Gratuit pendant la bêta.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="referrer" content="no-referrer">
-  <meta name="theme-color" content="#0A1F44">
+  <meta name="theme-color" content="#060D1F">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; script-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'">
   <link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="img/logo-icon.png">
@@ -17,28 +16,33 @@
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="Referee Tracker">
   <meta property="og:title" content="Referee Tracker — l'application des arbitres de basket">
-  <meta property="og:description" content="Transfère tes convocations, l'app fait le reste : matchs, kilomètres, indemnités, paiements, agenda, QCM.">
-  <meta property="og:image" content="https://www.referee-tracker.fr/img/logo-wordmark.png">
+  <meta property="og:description" content="Transfère tes convocations, l'app fait le reste : matchs, kilomètres, indemnités, paiements, agenda, QCM et règlement.">
+  <meta property="og:image" content="https://www.referee-tracker.fr/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Aperçu de l'application Referee Tracker sur téléphone">
   <meta property="og:url" content="https://www.referee-tracker.fr/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Referee Tracker — l'application des arbitres de basket">
-  <meta name="twitter:description" content="Convocations lues automatiquement, kilomètres, indemnités, paiements, agenda, QCM. Gratuit, places limitées.">
-  <meta name="twitter:image" content="https://www.referee-tracker.fr/img/logo-wordmark.png">
-  <link rel="preload" href="fonts/montserrat-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <meta name="twitter:description" content="Convocations lues automatiquement, kilomètres, indemnités, paiements, agenda, QCM. Gratuit pendant la bêta.">
+  <meta name="twitter:image" content="https://www.referee-tracker.fr/img/og.jpg">
+  <link rel="preload" href="fonts/montserrat-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="img/app/accueil.webp" as="image" type="image/webp">
   <link rel="stylesheet" href="fonts/fonts.css">
-  <link rel="stylesheet" href="style.css?v=b70">
+  <link rel="stylesheet" href="site.css?v=b76">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
-    {"@type":"SoftwareApplication","name":"Referee Tracker","url":"https://www.referee-tracker.fr/","applicationCategory":"SportsApplication","operatingSystem":"Web, iOS, Android","inLanguage":"fr","description":"Application de suivi pour les arbitres de basket : lecture automatique des convocations, kilomètres, indemnités, paiements, agenda, QCM et règlement.","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR","availability":"https://schema.org/LimitedAvailability"},"featureList":["Lecture automatique des convocations","Kilomètres et indemnités","Suivi des paiements et échéances","Agenda synchronisé","Notifications","QCM et règlement","Évaluations et progression"]},
-    {"@type":"WebSite","name":"Referee Tracker","url":"https://www.referee-tracker.fr/","inLanguage":"fr"},
+    {"@type":"Organization","@id":"https://www.referee-tracker.fr/#org","name":"Referee Tracker","url":"https://www.referee-tracker.fr/","logo":"https://www.referee-tracker.fr/img/logo-icon.png","email":"contact@referee-tracker.fr"},
+    {"@type":"WebSite","@id":"https://www.referee-tracker.fr/#site","name":"Referee Tracker","url":"https://www.referee-tracker.fr/","inLanguage":"fr","publisher":{"@id":"https://www.referee-tracker.fr/#org"}},
+    {"@type":"SoftwareApplication","name":"Referee Tracker","url":"https://www.referee-tracker.fr/","applicationCategory":"SportsApplication","operatingSystem":"Web, iOS, Android","inLanguage":"fr","publisher":{"@id":"https://www.referee-tracker.fr/#org"},"image":"https://www.referee-tracker.fr/img/og.jpg","screenshot":["https://www.referee-tracker.fr/img/app/accueil.webp","https://www.referee-tracker.fr/img/app/paiements.webp","https://www.referee-tracker.fr/img/app/stats.webp"],"description":"Application pour les arbitres de basket : lecture automatique des convocations, kilomètres, indemnités, suivi des paiements, agenda, QCM et règlement.","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR","availability":"https://schema.org/LimitedAvailability"},"featureList":["Lecture automatique des convocations 5x5 et 3x3","Kilomètres et indemnités calculés","Suivi des paiements par payeur et échéances","Rapprochement avec le relevé bancaire sans conservation","Agenda synchronisé","Notifications","Règlement : analyse de situations de match","QCM d'entraînement et d'examen","Rapports officiels pré-remplis","Classements des équipes"]},
     {"@type":"FAQPage","mainEntity":[
-      {"@type":"Question","name":"Referee Tracker accède-t-il à ma boîte mail ?","acceptedAnswer":{"@type":"Answer","text":"Non, jamais. Tu transfères toi-même tes convocations (ou tu crées une règle de transfert automatique) vers ton adresse Referee Tracker personnelle. Nous ne voyons que ce que tu nous envoies."}},
-      {"@type":"Question","name":"Où sont stockées mes données ?","acceptedAnswer":{"@type":"Answer","text":"En Europe, chiffrées en transit, visibles uniquement par toi via ton compte. Elles servent exclusivement à faire fonctionner ton suivi."}},
-      {"@type":"Question","name":"Puis-je supprimer mon compte et mes données ?","acceptedAnswer":{"@type":"Answer","text":"Oui, à tout moment, sur simple demande à rgpd@referee-tracker.fr. Tout est effacé, convocations et historique compris."}},
-      {"@type":"Question","name":"Les montants affichés sont-ils officiels ?","acceptedAnswer":{"@type":"Answer","text":"Ce sont des estimations calculées à partir des barèmes de ton comité, de ta ligue et de ta fédération. La convocation officielle et les documents de ta fédération restent la référence."}},
-      {"@type":"Question","name":"Faut-il installer quelque chose ?","acceptedAnswer":{"@type":"Answer","text":"Non : Referee Tracker fonctionne dans le navigateur de ton téléphone ou de ton ordinateur et s'ajoute à l'écran d'accueil comme une app."}},
-      {"@type":"Question","name":"Est-ce officiel ou affilié à une fédération ?","acceptedAnswer":{"@type":"Answer","text":"Non. Referee Tracker est un projet indépendant créé par un arbitre, sans lien avec les instances du basket. Il n'exerce aucune fonction officielle : il t'aide seulement à organiser ce que tu reçois."}}
+      {"@type":"Question","name":"Referee Tracker accède-t-il à ma boîte mail ?","acceptedAnswer":{"@type":"Answer","text":"Non, jamais. Tu transfères toi-même tes convocations (ou tu crées une règle de transfert automatique) vers ton adresse Referee Tracker personnelle. L'app ne voit que ce que tu lui envoies."}},
+      {"@type":"Question","name":"Combien coûte Referee Tracker ?","acceptedAnswer":{"@type":"Answer","text":"L'application est gratuite pendant la bêta, ouverte à un petit groupe d'arbitres. Les demandes suivantes passent sur liste d'attente."}},
+      {"@type":"Question","name":"Où sont stockées mes données ?","acceptedAnswer":{"@type":"Answer","text":"Dans l'Union européenne, chiffrées en transit, visibles uniquement par toi via ton compte. Ton relevé bancaire, si tu l'utilises pour pointer tes paiements, n'est jamais envoyé ni conservé."}},
+      {"@type":"Question","name":"Les montants affichés sont-ils officiels ?","acceptedAnswer":{"@type":"Answer","text":"Ce sont des calculs faits à partir des barèmes de ton comité, de ta ligue et de ta fédération et de tes kilomètres. La convocation officielle reste la référence."}},
+      {"@type":"Question","name":"Faut-il installer quelque chose ?","acceptedAnswer":{"@type":"Answer","text":"Non : Referee Tracker fonctionne dans le navigateur de ton téléphone ou de ton ordinateur et s'ajoute à l'écran d'accueil comme une app, avec ses notifications."}},
+      {"@type":"Question","name":"Est-ce un outil officiel ?","acceptedAnswer":{"@type":"Answer","text":"Non. Referee Tracker est un projet indépendant créé par un arbitre, sans lien avec les instances du basket. Il t'aide à organiser ce que tu reçois et ce que tu fais."}}
     ]}
   ]}
   </script>
@@ -46,281 +50,262 @@
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
 
-<header class="topbar">
+<header class="top">
   <div class="wrap">
-    <a class="brand" href="./" aria-label="Referee Tracker — accueil">
-      <img src="img/logo-icon.png" alt="" width="36" height="33">
-      <span>REFEREE TRACKER</span>
-    </a>
+    <a class="brand" href="./" aria-label="Referee Tracker, accueil"><img src="img/logo-icon.png" alt="" width="38" height="35">REFEREE <b>TRACKER</b></a>
     <nav class="nav" aria-label="Navigation principale">
-      <a class="nav-link" href="#fonctions">Fonctions</a>
-      <a class="nav-link" href="#securite">Sécurité</a>
-      <a class="nav-link" href="#faq">FAQ</a>
-      <a class="btn btn-outline btn-sm" href="https://app.referee-tracker.fr">Ouvrir l'app</a>
-      <a class="btn btn-gold btn-sm" href="inscription.html">Demander un accès</a>
+      <a class="l" href="#visite">L'app</a>
+      <a class="l" href="#calculateur">Calculateur</a>
+      <a class="l" href="#fonctions">Fonctions</a>
+      <a class="l" href="guides/">Guides</a>
+      <a class="l" href="#faq">FAQ</a>
+      <a class="btn btn-ghost btn-sm" href="https://app.referee-tracker.fr">Se connecter</a>
+      <a class="btn btn-gold btn-sm" href="inscription.html"><span class="long">Rejoindre la bêta</span><span class="court">Rejoindre</span></a>
     </nav>
   </div>
 </header>
 
 <main id="contenu">
 
-  <!-- ===== HÉROS ===== -->
-  <section class="hero" aria-labelledby="titre-hero">
-    <div class="wrap hero-grid">
-      <div>
-        <span class="pill"><i class="dot" aria-hidden="true"></i>Accès anticipé · places limitées</span>
-        <h1 id="titre-hero">L'application des arbitres de basket qui <span class="accent">lit tes convocations</span> à ta place.</h1>
-        <p class="lead">Transfère tes convocations par e-mail. Referee Tracker en extrait chaque match, calcule tes kilomètres et tes indemnités, surveille tes paiements et remplit ton agenda. Tu ne saisis plus rien.</p>
-        <div class="cta-row">
-          <a class="btn btn-gold" href="inscription.html">Demander un accès</a>
-          <a class="btn btn-outline" href="#comment">Comment ça marche</a>
-        </div>
-        <ul class="hero-proof" aria-label="Points clés">
-          <li>Gratuit</li>
-          <li>Aucun accès à ta boîte mail</li>
-          <li>Données hébergées en Europe</li>
-          <li>Conçu par un arbitre</li>
-        </ul>
+<!-- HÉROS -->
+<section class="hero" aria-labelledby="h1">
+  <div class="grille" aria-hidden="true"></div>
+  <div class="wrap hero-g">
+    <div>
+      <span class="pill rv"><i aria-hidden="true"></i>Bêta ouverte · 10 places</span>
+      <h1 id="h1" class="rv d1">L'application des <span class="grad">arbitres de basket.</span></h1>
+      <p class="lead rv d2"><strong style="color:#fff">Convocations, kilomètres, indemnités, paiements : tout se fait tout seul.</strong> Tu transfères tes convocations. Referee Tracker crée chaque match, calcule ton indemnité au centime, suit qui te doit quoi et te prévient au bon moment. Fini les tableurs : <span class="typed" data-mots='["zéro saisie.","zéro oubli.","zéro relance perdue."]'>zéro saisie.</span></p>
+      <div class="cta rv d3">
+        <a class="btn btn-gold" href="inscription.html">Rejoindre la bêta gratuite <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="#visite">Voir l'app en action</a>
       </div>
+      <ul class="proof rv d3" aria-label="Points clés">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Gratuit</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Aucun accès à ta boîte mail</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Données en Europe</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Conçu par un arbitre</li>
+      </ul>
+    </div>
 
-      <div class="phone" aria-hidden="true">
-        <div class="screen">
-          <div class="sc-head"><strong>Ce week-end</strong><img src="img/logo-icon.png" alt=""></div>
-          <div class="card">
-            <div class="t"><span>SAM 14 · 20h30</span><span>42 km</span></div>
-            <div class="s">U17 M Région · Strasbourg vs Haguenau</div>
-          </div>
-          <div class="card navy">
-            <div class="t"><span>DIM 15 · 15h30</span><span>68 km</span></div>
-            <div class="s">NF3 · Sélestat vs Épinal · 2e arbitre</div>
-          </div>
-          <div class="card red">
-            <div class="t"><span>Annulé</span><span>—</span></div>
-            <div class="s">U15 F · Molsheim vs Obernai (report)</div>
-          </div>
-          <div class="kpis">
-            <div class="kpi"><b>23</b><span>matchs</span></div>
-            <div class="kpi"><b>1 480</b><span>km</span></div>
-            <div class="kpi"><b>92 %</b><span>payé</span></div>
-          </div>
-          <div class="card">
-            <div class="t"><span>Paiement comité</span><span>attendu</span></div>
-            <div class="s">Échéance : fin de mois · 6 matchs</div>
+    <div class="rv d2">
+      <div class="scene">
+        <div class="phone">
+          <div class="ecran" id="heroEcran">
+            <img class="on" src="img/app/accueil.webp" width="585" height="1266" alt="Écran d'accueil de Referee Tracker : prochain match, paiements reçus et en attente">
+            <img data-src="img/app/matchs.webp" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" width="585" height="1266" alt="Liste des matchs à venir avec indemnité et statut de paiement">
+            <img data-src="img/app/paiements.webp" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" width="585" height="1266" alt="Paiements : reçu, à venir et en retard">
+            <img data-src="img/app/stats.webp" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" width="585" height="1266" alt="Analyse : bilan financier de la saison">
+            <div class="reflet" aria-hidden="true"></div>
           </div>
         </div>
+        <div class="toast t1" aria-hidden="true"><div class="ic">✉</div><div><b>Nouvelle convocation</b><span>Sam. 20 h · 1er arbitre · 103,20 €</span></div></div>
+        <div class="toast t2" aria-hidden="true"><div class="ic">€</div><div><b>Paiement reçu</b><span>Comité · 6 matchs · 291,60 €</span></div></div>
+        <div class="toast t3" aria-hidden="true"><div class="ic">⏱</div><div><b>Pars à 18 h 45</b><span>Rendez-vous 19 h 15 · 36 min de route</span></div></div>
+      </div>
+      <div class="points" aria-label="Choisir un écran">
+        <button class="on" aria-label="Accueil"></button><button aria-label="Matchs"></button><button aria-label="Paiements"></button><button aria-label="Analyse"></button>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ===== BANDEAU CHIFFRES ===== -->
-  <section class="band" aria-label="Ce que tu gagnes">
-    <div class="wrap band-grid">
-      <div><b>0</b><span>saisie manuelle : les convocations sont lues automatiquement</span></div>
-      <div><b>100 %</b><span>de tes matchs, kilomètres et indemnités au même endroit</span></div>
-      <div><b>1 règle</b><span>de transfert dans ta messagerie, et c'est réglé pour la saison</span></div>
-    </div>
-  </section>
+<div class="defile" aria-hidden="true">
+  <ul>
+    <li>Convocations lues automatiquement</li><li>Indemnités au centime</li><li>Qui te doit quoi</li><li>Agenda synchronisé</li><li>Rappels avant le match</li><li>Règlement : analyse de situation</li><li>QCM d'entraînement</li><li>Rapports pré-remplis</li><li>Classements des équipes</li><li>Hôtels et frais réels</li>
+    <li>Convocations lues automatiquement</li><li>Indemnités au centime</li><li>Qui te doit quoi</li><li>Agenda synchronisé</li><li>Rappels avant le match</li><li>Règlement : analyse de situation</li><li>QCM d'entraînement</li><li>Rapports pré-remplis</li><li>Classements des équipes</li><li>Hôtels et frais réels</li>
+  </ul>
+</div>
 
-  <!-- ===== COMMENT ÇA MARCHE ===== -->
-  <section id="comment" aria-labelledby="titre-comment">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">Comment ça marche</span>
-        <h2 id="titre-comment">Trois étapes, zéro saisie.</h2>
-        <p>Tu continues à recevoir tes convocations comme aujourd'hui. Tu les transfères, c'est tout.</p>
-      </div>
-      <div class="steps">
-        <article class="step">
-          <span class="num" aria-hidden="true">1</span>
-          <h3>Transfère tes convocations</h3>
-          <p>Une règle de transfert dans ta messagerie envoie automatiquement chaque convocation vers ton adresse Referee Tracker personnelle (prenom@referee-tracker.fr).</p>
-        </article>
-        <article class="step">
-          <span class="num" aria-hidden="true">2</span>
-          <h3>L'app lit tout</h3>
-          <p>Date, lieu, équipes, niveau, rôle, annulations et reports : chaque e-mail est analysé et transformé en fiche de match, avec ton itinéraire.</p>
-        </article>
-        <article class="step">
-          <span class="num" aria-hidden="true">3</span>
-          <h3>Tu suis matchs, km, paiements</h3>
-          <p>Ton agenda, tes trajets, tes indemnités et l'état de chaque paiement sont à jour sur ton téléphone, sans rien saisir.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+<!-- CHIFFRES -->
+<section aria-label="En chiffres" style="padding:80px 0">
+  <div class="wrap chiffres">
+    <div class="chiffre rv"><strong data-to="5">0<small> min</small></strong><span>au plus entre la convocation reçue et le match dans l'app</span></div>
+    <div class="chiffre rv d1"><strong data-to="0">0<small> saisie</small></strong><span>date, salle, équipes, rôle, collègue : tout est lu pour toi</span></div>
+    <div class="chiffre rv d2"><strong data-to="4">0<small> payeurs</small></strong><span>comité, ligue, fédération et clubs, chacun avec son échéancier</span></div>
+    <div class="chiffre rv d3"><strong data-to="3190">0</strong><span>résultats de championnat suivis pour classer les deux équipes de ton match</span></div>
+  </div>
+</section>
 
-  <!-- ===== FONCTIONS ===== -->
-  <section id="fonctions" aria-labelledby="titre-atouts">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">Ce que fait Referee Tracker</span>
-        <h2 id="titre-atouts">Tout ce qu'un arbitre gère à côté du terrain.</h2>
+<!-- VISITE -->
+<section id="visite" aria-labelledby="h-visite">
+  <div class="wrap visite">
+    <div>
+      <div class="head rv">
+        <span class="eyebrow">Visite de l'app</span>
+        <h2 id="h-visite">Tout ton arbitrage, dans ta poche.</h2>
+        <p>Les vrais écrans de l'application (données fictives). Touche un onglet ou laisse défiler.</p>
       </div>
-      <div class="cards">
-        <article class="card-f">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="m4 7 8 6 8-6"/></svg></div>
-          <h3>Lecture automatique des convocations</h3>
-          <p>Convocations 5x5 et 3x3 reconnues, y compris les modifications, reports et annulations. Chaque match devient une fiche complète.</p>
-        </article>
-        <article class="card-f">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h3l3-7 4 14 3-7h5"/></svg></div>
-          <h3>Kilomètres et indemnités</h3>
-          <p>Distance depuis ton adresse de départ, barème de ton niveau et de ta zone : tu sais ce que chaque match te rapporte, carburant déduit.</p>
-        </article>
-        <article class="card-f">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 10h20"/><path d="M6 15h4"/></svg></div>
-          <h3>Paiements et échéances</h3>
-          <p>Comité, ligue, fédération, clubs : chaque payeur a son calendrier. Tu vois ce qui est attendu, en retard ou réglé, et tu rapproches ton relevé bancaire en un glisser-déposer.</p>
-        </article>
-        <article class="card-f">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18"/><path d="M8 2v4M16 2v4"/><path d="m9 15 2 2 4-4"/></svg></div>
-          <h3>Agenda synchronisé</h3>
-          <p>Tes matchs dans Calendrier, Google Agenda ou Outlook, mis à jour tout seuls. Heure de rendez-vous, adresse de la salle, trajet.</p>
-        </article>
-        <article class="card-f">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10 21a2 2 0 0 0 4 0"/></svg></div>
-          <h3>Notifications utiles</h3>
-          <p>Nouveau match, annulation, rappel la veille et le matin, paiement en retard : prévenu au bon moment, sans rouvrir ta boîte mail.</p>
-        </article>
-        <article class="card-f">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M9 7h7M9 11h5"/></svg></div>
-          <h3>Règlement et QCM</h3>
-          <p>Pose une question de règle, obtiens une réponse sourcée dans le règlement officiel. Entraîne-toi au QCM avec un plan adapté à tes erreurs.</p>
-        </article>
-        <article class="card-f">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l5-5 4 4 8-8"/><path d="M14 8h6v6"/></svg></div>
-          <h3>Évaluations et progression</h3>
-          <p>Dépose tes rapports d'observation : notes, familles de critères et axes de travail suivis d'une saison à l'autre.</p>
-        </article>
-        <article class="card-f">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 13h8M8 17h8"/></svg></div>
-          <h3>Rapports d'incident guidés</h3>
-          <p>Un assistant te pose les bonnes questions et met en forme ton rapport. Tu gardes la main sur chaque phrase.</p>
-        </article>
+      <div class="onglets rv d1" role="tablist" aria-label="Écrans de l'application">
+        <button class="onglet on" role="tab" aria-selected="true"><h3><em>01</em>Accueil</h3><p>Ton prochain match, l'heure à laquelle partir, ce que tu as touché et ce qu'on te doit encore. Tout en un coup d'œil.</p><span class="barre"></span></button>
+        <button class="onglet" role="tab" aria-selected="false"><h3><em>02</em>Matchs</h3><p>Chaque convocation devient une fiche : rendez-vous, salle, collègue, indemnité, statut du paiement. Annulations et reports mis à jour seuls.</p><span class="barre"></span></button>
+        <button class="onglet" role="tab" aria-selected="false"><h3><em>03</em>Argent</h3><p>Reçu, à venir, en retard. La date de paiement est prévue selon l'échéancier de chaque payeur, et tu pointes ton relevé en un geste.</p><span class="barre"></span></button>
+        <button class="onglet" role="tab" aria-selected="false"><h3><em>04</em>Analyse</h3><p>Ton revenu réel une fois le carburant déduit, ta trésorerie à 30, 60 et 90 jours, ta projection de fin de saison.</p><span class="barre"></span></button>
+        <button class="onglet" role="tab" aria-selected="false"><h3><em>05</em>Règlement</h3><p>Raconte une action de match : l'app te dit ce qu'il fallait siffler, ce qui allait bien, ce qui n'allait pas, articles à l'appui.</p><span class="barre"></span></button>
+        <button class="onglet" role="tab" aria-selected="false"><h3><em>06</em>QCM</h3><p>Entraînement corrigé question par question, examen chronométré, et un plan de révision construit à partir de tes erreurs.</p><span class="barre"></span></button>
       </div>
     </div>
-  </section>
-
-  <!-- ===== SUR MESURE ===== -->
-  <section id="zones" aria-labelledby="titre-zones">
-    <div class="wrap">
-      <div class="zones">
-        <div>
-          <span class="eyebrow" style="color:var(--gold)">Sur mesure</span>
-          <h2 id="titre-zones">Réglé pour ta zone et ton niveau.</h2>
-          <p>Barèmes, échéances de paiement et interlocuteurs changent selon qui te convoque. À l'inscription, tu indiques ton comité, ta ligue et si tu arbitres en Championnat de France : l'app est configurée avant ta première connexion.</p>
+    <div class="rv d2">
+      <div class="scene">
+        <div class="phone">
+          <div class="ecran" id="visiteEcran">
+            <img class="on" loading="lazy" src="img/app/accueil.webp" width="585" height="1266" alt="Accueil de l'application Referee Tracker">
+            <img loading="lazy" data-src="img/app/matchs.webp" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" width="585" height="1266" alt="Matchs à venir">
+            <img loading="lazy" data-src="img/app/paiements.webp" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" width="585" height="1266" alt="Suivi des paiements de l'arbitre">
+            <img loading="lazy" data-src="img/app/stats.webp" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" width="585" height="1266" alt="Analyse financière de la saison">
+            <img loading="lazy" data-src="img/app/reglement.webp" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" width="585" height="1266" alt="Analyse d'une situation de match par l'assistant règlement">
+            <img loading="lazy" data-src="img/app/qcm.webp" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" width="585" height="1266" alt="QCM d'arbitrage : entraînement et examen">
+            <div class="reflet" aria-hidden="true"></div>
+          </div>
         </div>
-        <ul>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-            <div><b>Comité départemental</b><span>Barème et calendrier de paiement de ton comité, matchs jeunes et 3x3.</span></div>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-            <div><b>Ligue régionale</b><span>Matchs régionaux et indemnités de la ligue, payés par périodes.</span></div>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-            <div><b>Championnat de France</b><span>Désignations nationales avec leur propre échéancier de virement.</span></div>
-          </li>
-        </ul>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ===== SÉCURITÉ ===== -->
-  <section id="securite" aria-labelledby="titre-securite">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">Tes données</span>
-        <h2 id="titre-securite">Sérieux sur la sécurité, dès le premier jour.</h2>
-      </div>
-      <div class="trust">
-        <article><h3>Tu transfères, on ne lit pas ta boîte</h3><p>Aucune connexion à ta messagerie. Seuls les e-mails que tu transfères arrivent sur ton adresse Referee Tracker.</p></article>
-        <article><h3>Chaque arbitre a son espace</h3><p>Tes données sont cloisonnées : personne d'autre ne les voit, et l'accès est protégé par ton mot de passe.</p></article>
-        <article><h3>Hébergé en Europe</h3><p>Base de données et fichiers hébergés dans l'Union européenne, connexions chiffrées, sauvegardes quotidiennes.</p></article>
-        <article><h3>Tu décides</h3><p>Export et suppression de ton compte sur simple demande : <a href="mailto:rgpd@referee-tracker.fr">rgpd@referee-tracker.fr</a>. Aucune revente, aucune publicité.</p></article>
-      </div>
+<!-- COMMENT ÇA MARCHE -->
+<section id="comment" aria-labelledby="h-comment">
+  <div class="wrap">
+    <div class="head c rv">
+      <span class="eyebrow">Comment ça marche</span>
+      <h2 id="h-comment">Trois étapes. Une seule fois.</h2>
+      <p>Tu continues à recevoir tes convocations comme aujourd'hui. Tu les transfères, l'app fait le reste toute la saison.</p>
     </div>
-  </section>
+    <div class="etapes">
+      <article class="etape rv"><div class="n">1</div><h3>Tu crées une règle de transfert</h3><p>Dans Gmail, Outlook ou Orange, une règle envoie chaque convocation vers ton adresse <code>prenom@referee-tracker.fr</code>. Deux minutes, une fois pour toutes.</p></article>
+      <article class="etape rv d1"><div class="n">2</div><h3>L'app lit chaque convocation</h3><p>Date, heure de rendez-vous, salle, équipes, niveau, ton rôle, ton collègue. Les modifications et annulations mettent le match à jour tout seul.</p></article>
+      <article class="etape rv d2"><div class="n">3</div><h3>Tu suis, tu encaisses</h3><p>Kilomètres depuis chez toi, indemnité selon le barème, date de paiement prévue, rappel la veille et alerte si un paiement tarde.</p></article>
+    </div>
+  </div>
+</section>
 
-  <!-- ===== ACCÈS ===== -->
-  <section id="acces" class="beta" aria-labelledby="titre-beta">
-    <div class="wrap">
-      <div class="beta-box">
-        <span class="eyebrow">Accès anticipé</span>
-        <h2 id="titre-beta">Gratuit, en petit comité.</h2>
-        <p class="muted">Referee Tracker ouvre ses portes à un nombre limité d'arbitres pour affiner chaque détail avec eux. Les demandes suivantes passent sur liste d'attente.</p>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Compte configuré à la main pour ta zone et ton niveau</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Import de tes convocations passées pour démarrer avec ton historique</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Contact direct par e-mail, remarques prises en compte rapidement</span></li>
-        </ul>
-        <a class="btn btn-navy" href="inscription.html">Demander mon accès</a>
+<!-- CALCULATEUR -->
+<section id="calculateur" aria-labelledby="h-calc">
+  <div class="wrap">
+    <div class="head c rv">
+      <span class="eyebrow">Essaie maintenant</span>
+      <h2 id="h-calc">Combien te rapporte vraiment ce match ?</h2>
+      <p>Bouge les curseurs. L'app fait ce calcul pour chaque match, avec ton barème, tes kilomètres réels et ton véhicule.</p>
+    </div>
+    <div class="calc rv">
+      <form id="calc" onsubmit="return false" aria-label="Calculateur d'indemnité">
+        <div class="champ"><label for="fixe">Part fixe du match <output id="oFixe"></output></label><input type="range" id="fixe" name="fixe" min="15" max="120" step="1" value="32"></div>
+        <div class="champ"><label for="km">Distance aller <output id="oKm"></output></label><input type="range" id="km" name="km" min="2" max="250" step="1" value="22"></div>
+        <div class="champ"><label for="taux">Indemnité kilométrique <output id="oTaux"></output></label><input type="range" id="taux" name="taux" min="20" max="60" step="1" value="40"></div>
+        <div class="champ"><label for="conso">Consommation <output id="oConso"></output></label><input type="range" id="conso" name="conso" min="30" max="110" step="1" value="60"></div>
+        <div class="champ"><label for="prix">Prix du carburant <output id="oPrix"></output></label><input type="range" id="prix" name="prix" min="120" max="230" step="1" value="180"></div>
+      </form>
+      <div class="res" aria-live="polite">
+        <div class="ligne"><span>Indemnité totale</span><b id="rInd">0,00 €</b></div>
+        <div class="ligne"><span>dont kilomètres (<span id="rAr">44 km aller-retour</span>)</span><b id="rKm">0,00 €</b></div>
+        <div class="ligne"><span>Carburant réellement dépensé</span><b id="rCarb">0,00 €</b></div>
+        <div class="ligne net"><span>Il te reste</span><b id="rNet">0,00 €</b></div>
+        <p class="note">Exemple indicatif : la part fixe et le taux kilométrique dépendent de ton comité, de ta ligue et du niveau du match. <a href="guides/indemnites-arbitre-basket.html" style="color:var(--gold2)">Comprendre le calcul</a></p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ===== FAQ ===== -->
-  <section id="faq" aria-labelledby="titre-faq">
-    <div class="wrap">
-      <div class="section-head" style="margin-inline:auto;text-align:center">
-        <span class="eyebrow">Questions fréquentes</span>
-        <h2 id="titre-faq">Ce qu'on nous demande souvent.</h2>
-      </div>
-      <div class="faq">
-        <details>
-          <summary>Referee Tracker accède-t-il à ma boîte mail ?</summary>
-          <p>Non, jamais. Tu transfères toi-même tes convocations (ou tu crées une règle de transfert automatique dans ta messagerie) vers ton adresse Referee Tracker. Nous ne voyons que ce que tu nous envoies.</p>
-        </details>
-        <details>
-          <summary>Où sont stockées mes données et qui peut les voir ?</summary>
-          <p>Tes convocations et tes données de match sont stockées en Europe, chiffrées en transit, et visibles uniquement par toi via ton compte. Elles servent exclusivement à faire fonctionner ton suivi. Détails dans la <a href="https://app.referee-tracker.fr/confidentialite.html">politique de confidentialité</a>.</p>
-        </details>
-        <details>
-          <summary>Puis-je supprimer mon compte et mes données ?</summary>
-          <p>Oui, à tout moment, sur simple demande à <a href="mailto:rgpd@referee-tracker.fr">rgpd@referee-tracker.fr</a>. Tout est effacé, convocations et historique compris.</p>
-        </details>
-        <details>
-          <summary>Les montants affichés sont-ils officiels ?</summary>
-          <p>Ce sont des estimations calculées à partir des barèmes de ton comité, de ta ligue et de ta fédération. La convocation officielle et les documents de ta fédération restent la référence.</p>
-        </details>
-        <details>
-          <summary>Faut-il installer quelque chose ?</summary>
-          <p>Non : Referee Tracker fonctionne dans le navigateur de ton téléphone ou de ton ordinateur. Tu peux l'ajouter à ton écran d'accueil pour l'utiliser comme une app.</p>
-        </details>
-        <details>
-          <summary>Est-ce un outil officiel ?</summary>
-          <p>Non. Referee Tracker est un projet indépendant, créé par un arbitre, sans aucun lien avec les instances du basket. Il n'exerce aucune fonction officielle : il t'aide seulement à organiser ce que tu reçois et ce que tu fais.</p>
-        </details>
-      </div>
+<!-- FONCTIONS -->
+<section id="fonctions" aria-labelledby="h-fonctions">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Fonctions</span>
+      <h2 id="h-fonctions">Tout ce qu'un arbitre gère à côté du terrain.</h2>
     </div>
-  </section>
+    <div class="cartes">
+      <article class="carte rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="m4 7 8 6 8-6"/></svg></div><h3>Convocations 5x5 et 3x3</h3><p>Lues automatiquement, y compris modifications, reports et annulations.</p></article>
+      <article class="carte rv d1"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h3l3-7 4 14 3-7h5"/></svg></div><h3>Indemnités au centime</h3><p>Part fixe et kilomètres aller-retour depuis ton adresse, selon ton barème.</p></article>
+      <article class="carte rv d2"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 10h20M6 15h4"/></svg></div><h3>Qui te doit quoi</h3><p>Chaque payeur, sa date de paiement prévue, ses retards. Pointage du relevé sans le conserver.</p></article>
+      <article class="carte rv d3"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/><path d="m9 15 2 2 4-4"/></svg></div><h3>Agenda synchronisé</h3><p>Tes matchs dans Calendrier, Google Agenda ou Outlook, à jour tout seuls.</p></article>
+      <article class="carte rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10 21a2 2 0 0 0 4 0"/></svg></div><h3>Notifications</h3><p>Nouveau match, annulation, heure de départ, paiement en retard.</p></article>
+      <article class="carte rv d1"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div><h3>Règlement et QCM</h3><p>Analyse de tes situations de match et entraînement adapté à tes erreurs.</p></article>
+      <article class="carte rv d2"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h8"/></svg></div><h3>Rapports pré-remplis</h3><p>Match, équipes et numéro repris de la convocation. Tu écris, l'app met en forme.</p></article>
+      <article class="carte rv d3"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l5-5 4 4 8-8"/><path d="M14 8h6v6"/></svg></div><h3>Progression</h3><p>Observations, axes de travail et classements des équipes que tu arbitres.</p></article>
+    </div>
+  </div>
+</section>
 
-  <section aria-label="Appel à l'inscription">
-    <div class="wrap">
-      <div class="cta-final">
-        <h2>Prêt à ne plus rien saisir ?</h2>
-        <p>Demande ton accès : on configure ton compte et tu reçois ton code de première connexion par e-mail.</p>
-        <a class="btn btn-gold" href="inscription.html">Demander un accès</a>
-      </div>
+<!-- ORDINATEUR -->
+<section aria-labelledby="h-pc">
+  <div class="wrap">
+    <div class="head c rv">
+      <span class="eyebrow">Aussi sur ordinateur et tablette</span>
+      <h2 id="h-pc">Le grand écran pour faire tes comptes.</h2>
+      <p>Même compte, mêmes données : analyse détaillée, export annuel, rapports.</p>
     </div>
-  </section>
+    <div class="pc-tabs rv"><button class="on">Accueil</button><button>Analyse</button><button>Paiements</button></div>
+    <div class="pc rv">
+      <div class="cadre" id="pcCadre">
+        <img class="on" loading="lazy" src="img/app/pc-accueil.webp" width="1440" height="900" alt="Referee Tracker sur ordinateur : accueil">
+        <img loading="lazy" data-src="img/app/pc-stats.webp" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" width="1440" height="900" alt="Referee Tracker sur ordinateur : analyse financière">
+        <img loading="lazy" data-src="img/app/pc-paiements.webp" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" width="1440" height="900" alt="Referee Tracker sur ordinateur : paiements">
+      </div>
+      <div class="pied" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<!-- SÉCURITÉ -->
+<section id="securite" aria-labelledby="h-secu">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Tes données</span>
+      <h2 id="h-secu">Sérieux sur la sécurité, dès le premier jour.</h2>
+    </div>
+    <div class="confiance">
+      <article class="rv"><h3>On ne lit pas ta boîte</h3><p>Aucune connexion à ta messagerie : seuls les e-mails que tu transfères arrivent dans l'app.</p></article>
+      <article class="rv d1"><h3>Ton espace, à toi seul</h3><p>Données cloisonnées par arbitre, mot de passe de 12 caractères minimum.</p></article>
+      <article class="rv d2"><h3>Hébergé en Europe</h3><p>Base de données dans l'Union européenne, connexions chiffrées, sauvegarde chiffrée chaque nuit.</p></article>
+      <article class="rv d3"><h3>Tu décides</h3><p>Relevé bancaire jamais conservé. Export ou suppression sur demande : <a href="mailto:rgpd@referee-tracker.fr">rgpd@referee-tracker.fr</a>.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" aria-labelledby="h-faq">
+  <div class="wrap">
+    <div class="head c rv"><span class="eyebrow">Questions fréquentes</span><h2 id="h-faq">Ce qu'on nous demande souvent.</h2></div>
+    <div class="faq rv">
+      <details><summary>Referee Tracker accède-t-il à ma boîte mail ?</summary><p>Non, jamais. Tu transfères toi-même tes convocations (ou tu crées une règle de transfert automatique) vers ton adresse Referee Tracker. L'app ne voit que ce que tu lui envoies.</p></details>
+      <details><summary>Combien ça coûte ?</summary><p>Rien pendant la bêta, ouverte à un petit groupe d'arbitres. Les demandes suivantes passent sur liste d'attente.</p></details>
+      <details><summary>Où sont stockées mes données ?</summary><p>Dans l'Union européenne, chiffrées en transit, visibles uniquement par toi. Ton relevé bancaire, si tu l'utilises pour pointer tes paiements, n'est jamais envoyé ni conservé. Détails dans la <a href="https://app.referee-tracker.fr/confidentialite.html">politique de confidentialité</a>.</p></details>
+      <details><summary>Les montants sont-ils officiels ?</summary><p>Ce sont des calculs faits à partir des barèmes de ton comité, de ta ligue et de ta fédération, et de tes kilomètres réels. La convocation officielle reste la référence. <a href="guides/indemnites-arbitre-basket.html">Comment l'indemnité est calculée</a>.</p></details>
+      <details><summary>Faut-il installer quelque chose ?</summary><p>Non : l'app fonctionne dans le navigateur de ton téléphone ou de ton ordinateur et s'ajoute à l'écran d'accueil comme une application, avec ses notifications.</p></details>
+      <details><summary>Est-ce un outil officiel ?</summary><p>Non. Referee Tracker est un projet indépendant, créé par un arbitre, sans lien avec les instances du basket.</p></details>
+    </div>
+  </div>
+</section>
+
+<section aria-label="Rejoindre la bêta" style="padding-top:20px">
+  <div class="wrap">
+    <div class="final rv">
+      <span class="eyebrow">Accès anticipé</span>
+      <h2>Ta prochaine convocation peut arriver toute seule dans l'app.</h2>
+      <p>Demande ton accès : on configure ton compte pour ta zone et ton niveau, et tu reçois ton code de première connexion par e-mail.</p>
+      <a class="btn btn-gold" href="inscription.html">Rejoindre la bêta gratuite</a>
+      <div class="places">Gratuit · 10 arbitres pour la première vague · liste d'attente ensuite</div>
+    </div>
+  </div>
+</section>
 </main>
 
 <footer>
   <div class="wrap">
     <div>
-      <strong style="color:#fff">Referee Tracker</strong><br>
-      <span class="legal">Projet indépendant d'un arbitre, à but non lucratif, sans lien avec les instances du basket. Les noms de compétitions et d'organismes cités appartiennent à leurs titulaires.</span>
+      <strong style="color:#fff">Referee Tracker</strong> · © <span id="annee">2026</span>
+      <span class="legal">Projet indépendant d'un arbitre, sans lien avec les instances du basket. Les noms de compétitions et d'organismes cités appartiennent à leurs titulaires. Captures d'écran : données fictives.</span>
     </div>
-    <nav aria-label="Liens légaux">
+    <nav aria-label="Liens">
+      <a href="guides/">Guides</a>
+      <a href="guides/indemnites-arbitre-basket.html">Indemnités d'arbitre</a>
+      <a href="guides/organiser-saison-arbitre-basket.html">Organiser sa saison</a>
       <a href="https://app.referee-tracker.fr/mentions-legales.html">Mentions légales</a>
       <a href="https://app.referee-tracker.fr/confidentialite.html">Confidentialité</a>
-      <a href="https://app.referee-tracker.fr/cgu.html">Conditions d'utilisation</a>
-      <a href="mailto:contact@referee-tracker.fr">contact@referee-tracker.fr</a>
+      <a href="https://app.referee-tracker.fr/cgu.html">Conditions</a>
+      <a href="mailto:contact@referee-tracker.fr">Contact</a>
     </nav>
   </div>
 </footer>
+<script src="site.js?v=b76" defer></script>
 </body>
 </html>
