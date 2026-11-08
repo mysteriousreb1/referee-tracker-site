@@ -186,7 +186,7 @@
       adresse: { adresse: val("adresse"), code_postal: val("code_postal"), ville: val("ville") },
       vehicule: { modele: val("vehicule_modele"), conso: val("vehicule_conso") ? Number(val("vehicule_conso")) : null, cv: val("vehicule_cv") ? Number(val("vehicule_cv")) : null },
       consentements: { cgu: $("#consent_cgu").checked, donnees: $("#consent_donnees").checked },
-      communications: { offres: !!($("#comm_offres") && $("#comm_offres").checked), whatsapp: !!($("#comm_whatsapp") && $("#comm_whatsapp").checked) },   // b77 : opt-in, décoché par défaut
+      communications: (() => { const refus = !!($("#comm_refus") && $("#comm_refus").checked); return { offres: !refus, whatsapp: !refus }; })(),   // b78d : droit d'opposition proposé à la collecte (art. L34-5 CPCE, services analogues)
       fichiers: fichiers.map((f) => ({ nom: f.name, taille: f.size })),
       origine: location.hostname,
     };
