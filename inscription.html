@@ -17,6 +17,7 @@
 :root{color-scheme:dark;--bg:#060D1F;--surface:#0F1E3F;--surface-2:#132650;--text:#EEF2FA;--muted:#A3B0CB;--line:rgba(255,255,255,.12);--shadow:0 20px 50px rgba(0,0,0,.45);--shadow-sm:0 2px 8px rgba(0,0,0,.3);--focus:#FFD45C}
 body{background:radial-gradient(circle at 0% 0%,rgba(29,78,216,.45),transparent 40%),radial-gradient(circle at 100% 100%,rgba(245,180,0,.22),transparent 40%),#060D1F;background-attachment:fixed}
 .progress li.active{color:var(--gold)!important}.progress li.active b{background:var(--gold)!important;color:#111!important}
+.check-opt{border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:10px 14px 4px;margin:14px 0}.check-opt legend{font-size:12px;color:var(--muted);padding:0 6px}
 .topbar{background:rgba(6,13,31,.78)!important;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.09)}
 </style>
 </head>
@@ -279,6 +280,17 @@ body{background:radial-gradient(circle at 0% 0%,rgba(29,78,216,.45),transparent 
           <span>J'accepte que mes convocations et mes évaluations soient traitées pour configurer et faire fonctionner mon compte.</span>
         </label>
         <p class="err" id="err-consent_donnees"></p>
+        <fieldset class="check-opt">
+          <legend>Facultatif · tu peux changer d'avis à tout moment dans Mon profil</legend>
+          <label class="check">
+            <input type="checkbox" id="comm_offres" name="comm_offres">
+            <span>Je veux recevoir par e-mail les nouveautés et offres de Referee Tracker (au plus 2 par mois).</span>
+          </label>
+          <label class="check">
+            <input type="checkbox" id="comm_whatsapp" name="comm_whatsapp">
+            <span>J'accepte aussi de les recevoir par WhatsApp, au numéro indiqué plus haut.</span>
+          </label>
+        </fieldset>
 
         <div class="alert" id="alert-global" hidden role="alert"></div>
 
