@@ -277,6 +277,11 @@ body{background:radial-gradient(circle at 0% 0%,rgba(29,78,216,.45),transparent 
         <dl class="recap" id="recap" aria-label="Récapitulatif"></dl>
 
         <label class="check">
+          <input type="checkbox" id="consent_age" name="consent_age" required>
+          <span>J'ai 15 ans ou plus.</span>
+        </label>
+        <p class="err" id="err-consent_age"></p>
+        <label class="check">
           <input type="checkbox" id="consent_cgu" name="consent_cgu" required>
           <span>J'accepte les <a href="https://app.referee-tracker.fr/cgu.html" target="_blank" rel="noopener">Conditions d'utilisation</a> et la <a href="https://app.referee-tracker.fr/confidentialite.html" target="_blank" rel="noopener">Politique de confidentialité</a>.</span>
         </label>
@@ -339,6 +344,6 @@ body{background:radial-gradient(circle at 0% 0%,rgba(29,78,216,.45),transparent 
   </div>
 </footer>
 
-<script src="script.js"></script>
+<script src="script.js?v=b88"></script>
 </body>
 </html>

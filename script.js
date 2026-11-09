@@ -85,6 +85,7 @@
       test("fichiers", fichiers.length <= MAX_FICHIERS, "Maximum " + MAX_FICHIERS + " fichiers.");
     }
     if (n === 4) {
+      test("consent_age", $("#consent_age").checked, "Referee Tracker est réservé aux arbitres de 15 ans et plus.");
       test("consent_cgu", $("#consent_cgu").checked, "Tu dois accepter les conditions pour continuer.");
       test("consent_donnees", $("#consent_donnees").checked, "Ce consentement est nécessaire pour traiter tes convocations.");
     }
@@ -185,7 +186,7 @@
       zones: { cd: val("cd"), cd_autre: val("cd") === "AUTRE" ? val("cd_autre") : "", ligue: val("ligue"), cf: $("#cf").checked },
       adresse: { adresse: val("adresse"), code_postal: val("code_postal"), ville: val("ville") },
       vehicule: { modele: val("vehicule_modele"), conso: val("vehicule_conso") ? Number(val("vehicule_conso")) : null, cv: val("vehicule_cv") ? Number(val("vehicule_cv")) : null },
-      consentements: { cgu: $("#consent_cgu").checked, donnees: $("#consent_donnees").checked },
+      consentements: { cgu: $("#consent_cgu").checked, donnees: $("#consent_donnees").checked, age15: $("#consent_age").checked },
       communications: (() => { const refus = !!($("#comm_refus") && $("#comm_refus").checked); return { offres: !refus, whatsapp: !refus }; })(),   // b78d : droit d'opposition proposé à la collecte (art. L34-5 CPCE, services analogues)
       fichiers: fichiers.map((f) => ({ nom: f.name, taille: f.size })),
       origine: location.hostname,
