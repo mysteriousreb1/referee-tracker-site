@@ -291,6 +291,22 @@ body{background:radial-gradient(circle at 0% 0%,rgba(29,78,216,.45),transparent 
           <small class="muted">Sert au calcul du coût réel de tes déplacements (barème kilométrique).</small>
         </fieldset>
 
+        <fieldset>
+          <legend>Ta licence et ta clé e-Marque <span class="muted">(facultatif)</span></legend>
+          <div class="grid2">
+            <div class="field">
+              <label for="numero_licence">N° de licence FFBB</label>
+              <input class="input" id="numero_licence" name="numero_licence" type="text" maxlength="30" autocomplete="off" autocapitalize="characters" placeholder="ex. VT123456">
+            </div>
+            <div class="field">
+              <label for="emarque_v2">Ta clé e-Marque V2</label>
+              <input class="input" id="emarque_v2" name="emarque_v2" type="password" maxlength="40" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="ta clé personnelle">
+              <p class="err" id="err-emarque_v2"></p>
+            </div>
+          </div>
+          <small class="muted">Ta clé reste personnelle : elle n'est visible que par toi, dans l'app (Mon espace › e-Licence). Tu peux aussi l'ajouter plus tard.</small>
+        </fieldset>
+
         <div class="actions">
           <button type="button" class="btn btn-ghost" data-prev>Retour</button>
           <button type="button" class="btn btn-gold" data-next>Continuer</button>
@@ -372,6 +388,6 @@ body{background:radial-gradient(circle at 0% 0%,rgba(29,78,216,.45),transparent 
   </div>
 </footer>
 
-<script src="script.js?v=b95"></script>
+<script src="script.js?v=b103"></script>
 </body>
 </html>

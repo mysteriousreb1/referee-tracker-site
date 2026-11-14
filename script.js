@@ -66,6 +66,7 @@
       test("nom_ffbb", nom.split(/\s+/).filter(Boolean).length >= 2, "Indique ton NOM puis ton prénom, comme sur les convocations (ex. MARTIN JULIE).");
       test("email_connexion", RE_EMAIL.test(val("email_connexion")), "Adresse e-mail invalide.");
       const tel = val("telephone").replace(/[.\-]/g, "");
+      { const em = val("emarque_v2").replace(/\s+/g, ""); test("emarque_v2", !em || /^[A-Za-z0-9]{6,40}$/.test(em), "Clé e-Marque : lettres et chiffres uniquement (6 à 40)."); }
       test("telephone", !!tel && RE_TEL.test(tel), tel ? "Numéro de téléphone invalide (ex. 06 12 34 56 78)." : "Indique ton numéro de téléphone.");
     }
     if (n === 2) {
@@ -261,6 +262,8 @@
       nom_ffbb: val("nom_ffbb").toUpperCase(),
       email_connexion: val("email_connexion").toLowerCase(),
       telephone: val("telephone"),
+      numero_licence: val("numero_licence"),
+      emarque_v2: val("emarque_v2").replace(/\s+/g, "").toUpperCase(),   // b103 — facultatif, rangé à part côté serveur
       email_ffbb: val("email_ffbb").toLowerCase(),
       fournisseur_mail: val("fournisseur_mail"),
       niveau: val("niveau"),
