@@ -8,11 +8,11 @@
   <meta name="referrer" content="no-referrer">
   <meta name="theme-color" content="#0A1F44">
   <meta name="robots" content="noindex">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; script-src 'self'; connect-src 'self' https://jlstedchnmdteazuqbly.supabase.co; object-src 'none'; base-uri 'none'; form-action 'self'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; script-src 'self'; connect-src 'self' https://jlstedchnmdteazuqbly.supabase.co https://data.geopf.fr; object-src 'none'; base-uri 'none'; form-action 'self'">
   <link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="img/logo-icon.png">
   <link rel="stylesheet" href="fonts/fonts.css">
-  <link rel="stylesheet" href="style.css?v=b93">
+  <link rel="stylesheet" href="style.css?v=b94">
   <style>/* b76 — même ambiance sombre que l'accueil */
 :root{color-scheme:dark;--bg:#060D1F;--surface:#0F1E3F;--surface-2:#132650;--text:#EEF2FA;--muted:#A3B0CB;--line:rgba(255,255,255,.12);--shadow:0 20px 50px rgba(0,0,0,.45);--shadow-sm:0 2px 8px rgba(0,0,0,.3);--focus:#FFD45C}
 body{background:radial-gradient(circle at 0% 0%,rgba(29,78,216,.45),transparent 40%),radial-gradient(circle at 100% 100%,rgba(245,180,0,.22),transparent 40%),#060D1F;background-attachment:fixed}
@@ -182,6 +182,9 @@ body{background:radial-gradient(circle at 0% 0%,rgba(29,78,216,.45),transparent 
                 <option value="dep2">Départemental groupe 2</option>
                 <option value="dep1">Départemental groupe 1</option>
               </optgroup>
+              <optgroup label="Passerelle">
+                <option value="ear">EAR</option>
+              </optgroup>
               <optgroup label="Région">
                 <option value="reg_j">Région jeunes (REG-J)</option>
                 <option value="reg3">Région 3 (hors Grand Est)</option>
@@ -243,7 +246,11 @@ body{background:radial-gradient(circle at 0% 0%,rgba(29,78,216,.45),transparent 
           <legend>Adresse de départ</legend>
           <div class="field">
             <label for="adresse">Adresse</label>
-            <input class="input" id="adresse" name="adresse" type="text" autocomplete="street-address" required maxlength="120" placeholder="12 rue des Sports">
+            <div class="adr-wrap">
+              <input class="input" id="adresse" name="adresse" type="text" autocomplete="off" required maxlength="120" placeholder="Commence à taper : 12 rue des Sports, Haguenau" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="adr-liste">
+              <ul class="adr-liste" id="adr-liste" role="listbox" hidden></ul>
+            </div>
+            <p class="hint" id="adr-etat" aria-live="polite"></p>
             <p class="err" id="err-adresse"></p>
           </div>
           <div class="grid2">
@@ -258,7 +265,7 @@ body{background:radial-gradient(circle at 0% 0%,rgba(29,78,216,.45),transparent 
               <p class="err" id="err-ville"></p>
             </div>
           </div>
-          <small class="muted">Point de départ de tes trajets vers les salles. Tu pourras le modifier dans l'app.</small>
+          <small class="muted">Point de départ de tes trajets vers les salles. Choisis ton adresse dans la liste : elle est vérifiée par la Base Adresse Nationale, et tes kilomètres seront justes. Tu pourras la modifier dans l'app.</small>
         </fieldset>
 
         <fieldset>
@@ -364,6 +371,6 @@ body{background:radial-gradient(circle at 0% 0%,rgba(29,78,216,.45),transparent 
   </div>
 </footer>
 
-<script src="script.js?v=b93"></script>
+<script src="script.js?v=b94"></script>
 </body>
 </html>

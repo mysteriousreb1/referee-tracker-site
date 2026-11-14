@@ -341,3 +341,9 @@ select.input { background-image: linear-gradient(45deg, transparent 50%, var(--m
 @media (min-width: 720px) { .trust { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1000px) { .cards { grid-template-columns: repeat(4, 1fr); } }
 .field .hint:empty { display: none; } .field .hint { margin: 4px 0 0; font-size: 13px; color: var(--muted); line-height: 1.4; }
+/* b94 — suggestions d'adresse (Base Adresse Nationale) */
+.adr-wrap { position: relative; }
+.adr-liste { position: absolute; z-index: 20; left: 0; right: 0; top: calc(100% + 4px); margin: 0; padding: 4px; list-style: none; background: var(--surface, #fff); border: 1px solid var(--line, #DCE2EC); border-radius: 12px; box-shadow: 0 10px 30px rgba(10, 31, 68, .18); max-height: 280px; overflow-y: auto; }
+.adr-liste li { padding: 9px 10px; border-radius: 8px; cursor: pointer; display: flex; flex-direction: column; gap: 1px; }
+.adr-liste li b { font-weight: 600; } .adr-liste li span { font-size: 13px; color: var(--muted); }
+.adr-liste li:hover, .adr-liste li[aria-selected="true"] { background: var(--surface-2, #EEF1F7); }

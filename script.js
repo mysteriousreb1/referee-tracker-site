@@ -79,6 +79,7 @@
     }
     if (n === 3) {
       test("adresse", val("adresse").length >= 3, "Indique ton adresse de départ.");
+      if (val("adresse").length >= 3 && ADR.service && !ADR.choisie) test("adresse", false, "Choisis ton adresse dans la liste proposée (tape le numéro, la rue et la ville).");
       test("code_postal", /^\d{5}$/.test(val("code_postal")), "Code postal à 5 chiffres.");
       test("ville", val("ville").length >= 2, "Indique ta ville.");
       const conso = val("vehicule_conso"), cv = val("vehicule_cv");
@@ -173,6 +174,47 @@
   }
   ["niveau", "parcours"].forEach((id) => { const e = $("#" + id); if (e) e.addEventListener("change", majNiveau); });
   const enCF = () => CF_AUTO.test(val("niveau")) || /^jpr_/.test(val("parcours"));
+  /* b94 — adresse de départ proposée et vérifiée par la Base Adresse Nationale (API Géoplateforme de l'IGN, service public,
+     gratuit, sans clé). Seul le texte tapé dans ce champ est envoyé, rien d'autre. Si le service ne répond pas, la saisie libre reste possible. */
+  const ADR = { service: true, choisie: null, t: null, items: [], i: -1 };
+  (function () {
+    const inp = $("#adresse"), liste = $("#adr-liste"), etat = $("#adr-etat"); if (!inp || !liste) return;
+    const fermer = () => { liste.hidden = true; inp.setAttribute("aria-expanded", "false"); ADR.i = -1; };
+    const choisir = (it) => {
+      ADR.choisie = it; inp.value = it.adresse; $("#code_postal").value = it.cp; $("#ville").value = it.ville;
+      ["adresse", "code_postal", "ville"].forEach((id) => erreur(id, "")); etat.textContent = "✓ Adresse vérifiée : " + it.label; fermer();
+    };
+    const afficher = () => {
+      liste.innerHTML = ADR.items.map((it, k) => '<li role="option" id="adr-o' + k + '" data-k="' + k + '"' + (k === ADR.i ? ' aria-selected="true"' : "") + "><b>" + it.adresse.replace(/[<>&]/g, "") + "</b><span>" + (it.cp + " " + it.ville).replace(/[<>&]/g, "") + "</span></li>").join("");
+      liste.hidden = !ADR.items.length; inp.setAttribute("aria-expanded", String(!!ADR.items.length));
+    };
+    const chercher = async (q) => {
+      try {
+        const r = await fetch("https://data.geopf.fr/geocodage/search?index=address&autocomplete=1&limit=6&q=" + encodeURIComponent(q), { cache: "no-store" });
+        if (!r.ok) throw new Error(r.status);
+        const j = await r.json(); ADR.service = true;
+        if (val("adresse") !== q) return;   // l'utilisateur a continué de taper
+        ADR.items = (j.features || []).map((f) => { const p = f.properties || {}, c = (f.geometry || {}).coordinates || [];
+          return { label: p.label, adresse: p.type === "municipality" ? "" : (p.name || p.label), cp: p.postcode || "", ville: p.city || "", lat: c[1], lon: c[0] }; }).filter((x) => x.cp && x.ville);
+        ADR.i = -1; afficher();
+        etat.textContent = ADR.items.length ? "" : "Aucune adresse trouvée : vérifie le numéro et la rue, puis ajoute la ville.";
+      } catch (e) { ADR.service = false; ADR.items = []; fermer(); etat.textContent = "Vérification d'adresse indisponible : saisis ton adresse, ton code postal et ta ville."; }
+    };
+    inp.addEventListener("input", () => {
+      ADR.choisie = null; clearTimeout(ADR.t); const q = val("adresse");
+      if (q.length < 4) { ADR.items = []; fermer(); etat.textContent = ""; return; }
+      ADR.t = setTimeout(() => chercher(q), 250);
+    });
+    inp.addEventListener("keydown", (e) => {
+      if (liste.hidden) return;
+      if (e.key === "ArrowDown" || e.key === "ArrowUp") { e.preventDefault(); ADR.i = (ADR.i + (e.key === "ArrowDown" ? 1 : -1) + ADR.items.length) % ADR.items.length; afficher(); inp.setAttribute("aria-activedescendant", "adr-o" + ADR.i); }
+      else if (e.key === "Enter" && ADR.i >= 0) { e.preventDefault(); choisir(ADR.items[ADR.i]); }
+      else if (e.key === "Escape") fermer();
+    });
+    liste.addEventListener("mousedown", (e) => { const li = e.target.closest("[data-k]"); if (li) { e.preventDefault(); choisir(ADR.items[Number(li.dataset.k)]); } });
+    inp.addEventListener("blur", () => setTimeout(fermer, 150));
+    ["code_postal", "ville"].forEach((id) => { const el = $("#" + id); if (el) el.addEventListener("input", () => { if (ADR.choisie) { ADR.choisie = null; etat.textContent = "Code postal ou ville modifié : choisis à nouveau ton adresse dans la liste."; } }); });
+  })();
   function libelle(id) { const s = $("#" + id); return s.options[s.selectedIndex] ? s.options[s.selectedIndex].text : ""; }
   function remplirRecap() {
     const lignes = [
@@ -211,7 +253,7 @@
       niveau: val("niveau"),
       parcours: val("parcours") === "aucun" ? "" : val("parcours"),
       zones: { cd: val("cd"), cd_autre: val("cd") === "AUTRE" ? val("cd_autre") : "", ligue: val("ligue"), cf: enCF() },
-      adresse: { adresse: val("adresse"), code_postal: val("code_postal"), ville: val("ville") },
+      adresse: { adresse: val("adresse"), code_postal: val("code_postal"), ville: val("ville"), lat: ADR.choisie ? ADR.choisie.lat : null, lon: ADR.choisie ? ADR.choisie.lon : null, verifiee: !!ADR.choisie },
       vehicule: { modele: val("vehicule_modele"), conso: val("vehicule_conso") ? Number(val("vehicule_conso")) : null, cv: val("vehicule_cv") ? Number(val("vehicule_cv")) : null },
       consentements: { cgu: $("#consent_cgu").checked, donnees: $("#consent_donnees").checked, age15: $("#consent_age").checked },
       communications: (() => { const refus = !!($("#comm_refus") && $("#comm_refus").checked); return { offres: !refus, whatsapp: !refus }; })(),   // b78d : droit d'opposition proposé à la collecte (art. L34-5 CPCE, services analogues)
