@@ -79,7 +79,7 @@
     }
     if (n === 3) {
       test("adresse", val("adresse").length >= 3, "Indique ton adresse de départ.");
-      if (val("adresse").length >= 3 && ADR.service && !ADR.choisie) test("adresse", false, "Choisis ton adresse dans la liste proposée (tape le numéro, la rue et la ville).");
+      if (val("adresse").length >= 3 && ADR.service && ADR.proposee && !ADR.choisie) test("adresse", false, "Clique sur ton adresse dans la liste juste en dessous du champ.");
       test("code_postal", /^\d{5}$/.test(val("code_postal")), "Code postal à 5 chiffres.");
       test("ville", val("ville").length >= 2, "Indique ta ville.");
       const conso = val("vehicule_conso"), cv = val("vehicule_cv");
@@ -104,7 +104,19 @@
   // NOM officiel : forcer les majuscules
   $("#nom_ffbb").addEventListener("blur", (e) => { e.target.value = e.target.value.toUpperCase().replace(/\s+/g, " ").trim(); });
   // Comité « Autre » : champ libre
-  $("#cd").addEventListener("change", (e) => { $("#f-cd-autre").hidden = e.target.value !== "AUTRE"; });
+  // b95 — la ligue se remplit d'après le comité (département → ligue régionale) ; l'arbitre peut toujours la changer.
+  const LIGUE_DE = {}; Object.entries({
+    ARA: "01 03 07 15 26 38 42 43 63 69 73 74", BFC: "21 25 39 58 70 71 89 90", BRE: "22 29 35 56", CVL: "18 28 36 37 41 45", COR: "2A 2B 20",
+    LRGEB: "08 10 51 52 54 55 57 67 68 88", HDF: "02 59 60 62 80", IDF: "75 77 78 91 92 93 94 95", NOR: "14 27 50 61 76",
+    NAQ: "16 17 19 23 24 33 40 47 64 79 86 87", OCC: "09 11 12 30 31 32 34 46 48 65 66 81 82", PDL: "44 49 53 72 85", PACA: "04 05 06 13 83 84" })
+    .forEach(([lg, deps]) => deps.split(" ").forEach((d) => { LIGUE_DE[d] = lg; }));
+  const ligueAuto = () => {
+    const brut = val("cd") === "AUTRE" ? val("cd_autre") : val("cd"), m = String(brut || "").toUpperCase().match(/(2A|2B|\d{1,2})/);
+    const lg = m ? LIGUE_DE[m[1].length === 1 ? "0" + m[1] : m[1]] : "";
+    if (lg) { $("#ligue").value = lg; erreur("ligue", ""); }
+  };
+  $("#cd").addEventListener("change", (e) => { $("#f-cd-autre").hidden = e.target.value !== "AUTRE"; ligueAuto(); });
+  $("#cd_autre").addEventListener("change", ligueAuto);
   // Pré-remplir l'e-mail convocations avec l'e-mail de connexion
   $("#email_connexion").addEventListener("blur", (e) => { const f = $("#email_ffbb"); if (!f.value) f.value = e.target.value.trim(); });
 
@@ -176,7 +188,7 @@
   const enCF = () => CF_AUTO.test(val("niveau")) || /^jpr_/.test(val("parcours"));
   /* b94 — adresse de départ proposée et vérifiée par la Base Adresse Nationale (API Géoplateforme de l'IGN, service public,
      gratuit, sans clé). Seul le texte tapé dans ce champ est envoyé, rien d'autre. Si le service ne répond pas, la saisie libre reste possible. */
-  const ADR = { service: true, choisie: null, t: null, items: [], i: -1 };
+  const ADR = { service: true, proposee: false, choisie: null, t: null, items: [], i: -1 };
   (function () {
     const inp = $("#adresse"), liste = $("#adr-liste"), etat = $("#adr-etat"); if (!inp || !liste) return;
     const fermer = () => { liste.hidden = true; inp.setAttribute("aria-expanded", "false"); ADR.i = -1; };
@@ -196,8 +208,8 @@
         if (val("adresse") !== q) return;   // l'utilisateur a continué de taper
         ADR.items = (j.features || []).map((f) => { const p = f.properties || {}, c = (f.geometry || {}).coordinates || [];
           return { label: p.label, adresse: p.type === "municipality" ? "" : (p.name || p.label), cp: p.postcode || "", ville: p.city || "", lat: c[1], lon: c[0] }; }).filter((x) => x.cp && x.ville);
-        ADR.i = -1; afficher();
-        etat.textContent = ADR.items.length ? "" : "Aucune adresse trouvée : vérifie le numéro et la rue, puis ajoute la ville.";
+        ADR.i = -1; if (ADR.items.length) ADR.proposee = true; afficher();
+        etat.textContent = ADR.items.length ? "Clique sur ton adresse dans la liste." : "Aucune adresse trouvée : vérifie le numéro et la rue, puis ajoute la ville.";
       } catch (e) { ADR.service = false; ADR.items = []; fermer(); etat.textContent = "Vérification d'adresse indisponible : saisis ton adresse, ton code postal et ta ville."; }
     };
     inp.addEventListener("input", () => {
@@ -211,8 +223,9 @@
       else if (e.key === "Enter" && ADR.i >= 0) { e.preventDefault(); choisir(ADR.items[ADR.i]); }
       else if (e.key === "Escape") fermer();
     });
-    liste.addEventListener("mousedown", (e) => { const li = e.target.closest("[data-k]"); if (li) { e.preventDefault(); choisir(ADR.items[Number(li.dataset.k)]); } });
-    inp.addEventListener("blur", () => setTimeout(fermer, 150));
+
+    // b95 — la liste est dans le flux de la page (elle pousse le reste vers le bas) : rien ne passe devant ou derrière
+    liste.addEventListener("click", (e) => { const li = e.target.closest("[data-k]"); if (li) choisir(ADR.items[Number(li.dataset.k)]); });
     ["code_postal", "ville"].forEach((id) => { const el = $("#" + id); if (el) el.addEventListener("input", () => { if (ADR.choisie) { ADR.choisie = null; etat.textContent = "Code postal ou ville modifié : choisis à nouveau ton adresse dans la liste."; } }); });
   })();
   function libelle(id) { const s = $("#" + id); return s.options[s.selectedIndex] ? s.options[s.selectedIndex].text : ""; }

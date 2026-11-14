@@ -12,7 +12,7 @@
   <link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="img/logo-icon.png">
   <link rel="stylesheet" href="fonts/fonts.css">
-  <link rel="stylesheet" href="style.css?v=b94">
+  <link rel="stylesheet" href="style.css?v=b95">
   <style>/* b76 — même ambiance sombre que l'accueil */
 :root{color-scheme:dark;--bg:#060D1F;--surface:#0F1E3F;--surface-2:#132650;--text:#EEF2FA;--muted:#A3B0CB;--line:rgba(255,255,255,.12);--shadow:0 20px 50px rgba(0,0,0,.45);--shadow-sm:0 2px 8px rgba(0,0,0,.3);--focus:#FFD45C}
 body{background:radial-gradient(circle at 0% 0%,rgba(29,78,216,.45),transparent 40%),radial-gradient(circle at 100% 100%,rgba(245,180,0,.22),transparent 40%),#060D1F;background-attachment:fixed}
@@ -144,7 +144,8 @@ body{background:radial-gradient(circle at 0% 0%,rgba(29,78,216,.45),transparent 
             <div class="field">
               <label for="ligue">Ligue régionale</label>
               <select class="input" id="ligue" name="ligue" required>
-                <option value="LRGEB" selected>Grand Est (LRGEB)</option>
+                <option value="">Choisir…</option>
+                <option value="LRGEB">Grand Est (LRGEB)</option>
                 <option value="ARA">Auvergne-Rhône-Alpes</option>
                 <option value="BFC">Bourgogne-Franche-Comté</option>
                 <option value="BRE">Bretagne</option>
@@ -247,7 +248,7 @@ body{background:radial-gradient(circle at 0% 0%,rgba(29,78,216,.45),transparent 
           <div class="field">
             <label for="adresse">Adresse</label>
             <div class="adr-wrap">
-              <input class="input" id="adresse" name="adresse" type="text" autocomplete="off" required maxlength="120" placeholder="Commence à taper : 12 rue des Sports, Haguenau" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="adr-liste">
+              <input class="input" id="adresse" name="adresse" type="text" autocomplete="off" required maxlength="120" placeholder="12 rue des Sports, Haguenau" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="adr-liste">
               <ul class="adr-liste" id="adr-liste" role="listbox" hidden></ul>
             </div>
             <p class="hint" id="adr-etat" aria-live="polite"></p>
@@ -371,6 +372,6 @@ body{background:radial-gradient(circle at 0% 0%,rgba(29,78,216,.45),transparent 
   </div>
 </footer>
 
-<script src="script.js?v=b94"></script>
+<script src="script.js?v=b95"></script>
 </body>
 </html>
