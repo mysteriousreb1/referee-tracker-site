@@ -43,7 +43,7 @@ section{padding:96px 0;position:relative}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:italic 800 17px/1 var(--font);letter-spacing:.02em}
 .brand img{width:38px;height:auto}
-.brand b{color:var(--red);font-weight:800}
+.brand{color:#FF4B2B}.brand b{color:#FFC933;font-weight:800}/* b100 — logo officiel : REFEREE rouge, TRACKER jaune (comme dans l'app) */
 .nav{display:flex;align-items:center;gap:26px}
 .nav a.l{text-decoration:none;color:var(--muted);font-weight:600;font-size:14px;transition:color .2s}
 .nav a.l:hover{color:#fff}
