@@ -66,13 +66,15 @@
       test("nom_ffbb", nom.split(/\s+/).filter(Boolean).length >= 2, "Indique ton NOM puis ton prénom, comme sur les convocations (ex. MARTIN JULIE).");
       test("email_connexion", RE_EMAIL.test(val("email_connexion")), "Adresse e-mail invalide.");
       const tel = val("telephone").replace(/[.\-]/g, "");
-      test("telephone", !tel || RE_TEL.test(tel), "Numéro de téléphone invalide (ex. 06 12 34 56 78).");
+      test("telephone", !!tel && RE_TEL.test(tel), tel ? "Numéro de téléphone invalide (ex. 06 12 34 56 78)." : "Indique ton numéro de téléphone.");
     }
     if (n === 2) {
       test("email_ffbb", RE_EMAIL.test(val("email_ffbb")), "Adresse e-mail invalide.");
       test("fournisseur_mail", !!val("fournisseur_mail"), "Choisis le fournisseur de ta messagerie.");
       test("niveau", !!val("niveau"), "Choisis ton niveau.");
       test("cd", !!val("cd"), "Choisis ton comité départemental.");
+      if (val("cd") === "AUTRE") test("cd_autre", val("cd_autre").length >= 2, "Précise ton comité.");
+      if (!$("#f-parcours").hidden) test("parcours", !!val("parcours"), "Choisis ton parcours (ou « Aucun »).");
       test("ligue", !!val("ligue"), "Choisis ta ligue.");
     }
     if (n === 3) {
@@ -80,8 +82,9 @@
       test("code_postal", /^\d{5}$/.test(val("code_postal")), "Code postal à 5 chiffres.");
       test("ville", val("ville").length >= 2, "Indique ta ville.");
       const conso = val("vehicule_conso"), cv = val("vehicule_cv");
-      test("vehicule_conso", !conso || (Number(conso) >= 1 && Number(conso) <= 30), "Consommation entre 1 et 30 L/100.");
-      test("vehicule_cv", !cv || (Number.isInteger(Number(cv)) && Number(cv) >= 1 && Number(cv) <= 30), "CV fiscaux entre 1 et 30.");
+      test("vehicule_modele", val("vehicule_modele").length >= 2, "Indique le modèle de ton véhicule.");
+      test("vehicule_conso", !!conso && Number(conso) >= 1 && Number(conso) <= 30, "Consommation entre 1 et 30 L/100.");
+      test("vehicule_cv", !!cv && Number.isInteger(Number(cv)) && Number(cv) >= 1 && Number(cv) <= 30, "CV fiscaux entre 1 et 30.");
       test("fichiers", fichiers.length <= MAX_FICHIERS, "Maximum " + MAX_FICHIERS + " fichiers.");
     }
     if (n === 4) {
@@ -154,13 +157,22 @@
     hn: "Betclic Élite, Pro B, LFB, NM1 (désignations HNO).", fiba: "Compétitions FIBA, coupes d'Europe." };
   const PARCOURS = { potentiel_dep: "Formations le week-end, désignations inchangées.", jpr_bleu: "2e arbitre U15 France le dimanche + doublage Région le samedi.", jpr_rouge: "2e arbitre NF3, U18 et U15 France le dimanche + doublage PN le samedi." };
   const CF_AUTO = /^(fed_|nat_|hn|fiba)/;
-  function majNiveau() {
-    const n = val("niveau"), p = val("parcours"), pl = $("#niveau-plafond"), pp = $("#parcours-plafond");
+  // b93b — parcours affiché seulement quand il existe : groupe potentiel pour le départemental, JPR pour la région.
+  const OPT_PARCOURS = { dep: [["", "Choisir…"], ["aucun", "Aucun"], ["potentiel_dep", "Groupe potentiel départemental"]], reg: [["", "Choisir…"], ["aucun", "Aucun"], ["jpr_bleu", "JPR Bleu"], ["jpr_rouge", "JPR Rouge"]] };
+  let familleParcours = "";
+  function majNiveau(e) {
+    const n = val("niveau"), sel = $("#parcours"), box = $("#f-parcours"), pl = $("#niveau-plafond"), pp = $("#parcours-plafond");
+    const fam = /^dep/.test(n) ? "dep" : /^reg/.test(n) ? "reg" : "";
+    if (fam !== familleParcours) {
+      familleParcours = fam; box.hidden = !fam;
+      sel.innerHTML = fam ? OPT_PARCOURS[fam].map(([v, t]) => '<option value="' + v + '">' + t + "</option>").join("") : "";
+      $("#parcours-label").textContent = fam === "reg" ? "Es-tu Jeune Potentiel Régional (JPR) ?" : "Fais-tu partie du groupe potentiel départemental ?";
+    }
     if (pl) pl.textContent = PLAFONDS[n] ? "Plafond : " + PLAFONDS[n] + " Toujours désignable en dessous." : "";
-    if (pp) pp.textContent = PARCOURS[p] || "";
-    if (CF_AUTO.test(n) || /^jpr_/.test(p)) $("#cf").checked = true;
+    if (pp) pp.textContent = PARCOURS[val("parcours")] || "";
   }
   ["niveau", "parcours"].forEach((id) => { const e = $("#" + id); if (e) e.addEventListener("change", majNiveau); });
+  const enCF = () => CF_AUTO.test(val("niveau")) || /^jpr_/.test(val("parcours"));
   function libelle(id) { const s = $("#" + id); return s.options[s.selectedIndex] ? s.options[s.selectedIndex].text : ""; }
   function remplirRecap() {
     const lignes = [
@@ -168,10 +180,10 @@
       ["Nom officiel", val("nom_ffbb")],
       ["E-mail de connexion", val("email_connexion")],
       ["E-mail convocations", val("email_ffbb") + " (" + libelle("fournisseur_mail") + ")"],
-      ["Niveau", libelle("niveau") + (val("parcours") ? " · " + libelle("parcours") : "")],
+      ["Niveau", libelle("niveau") + (/^(potentiel|jpr)/.test(val("parcours")) ? " · " + libelle("parcours") : "")],
       ["Comité", val("cd") === "AUTRE" && val("cd_autre") ? val("cd_autre") : libelle("cd")],
       ["Ligue", libelle("ligue")],
-      ["Championnat de France", $("#cf").checked ? "Oui" : "Non"],
+      ["Championnat de France", enCF() ? "Oui (d'après ton niveau)" : "Non"],
       ["Départ", val("adresse") + ", " + val("code_postal") + " " + val("ville")],
       ["Convocations passées", fichiers.length ? fichiers.length + " PDF" : "aucune"],
     ];
@@ -197,8 +209,8 @@
       email_ffbb: val("email_ffbb").toLowerCase(),
       fournisseur_mail: val("fournisseur_mail"),
       niveau: val("niveau"),
-      parcours: val("parcours"),
-      zones: { cd: val("cd"), cd_autre: val("cd") === "AUTRE" ? val("cd_autre") : "", ligue: val("ligue"), cf: $("#cf").checked },
+      parcours: val("parcours") === "aucun" ? "" : val("parcours"),
+      zones: { cd: val("cd"), cd_autre: val("cd") === "AUTRE" ? val("cd_autre") : "", ligue: val("ligue"), cf: enCF() },
       adresse: { adresse: val("adresse"), code_postal: val("code_postal"), ville: val("ville") },
       vehicule: { modele: val("vehicule_modele"), conso: val("vehicule_conso") ? Number(val("vehicule_conso")) : null, cv: val("vehicule_cv") ? Number(val("vehicule_cv")) : null },
       consentements: { cgu: $("#consent_cgu").checked, donnees: $("#consent_donnees").checked, age15: $("#consent_age").checked },

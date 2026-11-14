@@ -67,8 +67,8 @@ body{background:radial-gradient(circle at 0% 0%,rgba(29,78,216,.45),transparent 
             <p class="err" id="err-prenom"></p>
           </div>
           <div class="field">
-            <label for="telephone">Téléphone <span class="opt">(facultatif)</span></label>
-            <input class="input" id="telephone" name="telephone" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="06 12 34 56 78">
+            <label for="telephone">Téléphone</label>
+            <input class="input" id="telephone" name="telephone" type="tel" required autocomplete="tel" inputmode="tel" maxlength="20" placeholder="06 12 34 56 78">
             <p class="err" id="err-telephone"></p>
           </div>
         </div>
@@ -121,58 +121,6 @@ body{background:radial-gradient(circle at 0% 0%,rgba(29,78,216,.45),transparent 
         </fieldset>
 
         <fieldset>
-          <legend>Niveau</legend>
-          <div class="field">
-            <label for="niveau">Niveau d'arbitrage principal</label>
-            <select class="input" id="niveau" name="niveau" required>
-              <option value="">Choisir…</option>
-              <optgroup label="Club">
-                <option value="club">Arbitre club</option>
-              </optgroup>
-              <optgroup label="Départemental">
-                <option value="dep3">Départemental groupe 3</option>
-                <option value="dep2">Départemental groupe 2</option>
-                <option value="dep1">Départemental groupe 1</option>
-              </optgroup>
-              <optgroup label="Passerelle vers la Région">
-                <option value="ear">EAR (année de formation)</option>
-              </optgroup>
-              <optgroup label="Région">
-                <option value="reg_j">Région jeunes (REG-J)</option>
-                <option value="reg3">Région 3 (hors Grand Est)</option>
-                <option value="reg2">Région 2 (REG-2)</option>
-                <option value="reg1">Région 1 (REG-1)</option>
-              </optgroup>
-              <optgroup label="Fédéral (Championnat de France)">
-                <option value="fed_bleu">Fédéral Bleu (stagiaire fédéral)</option>
-                <option value="fed_rouge">Fédéral Rouge</option>
-              </optgroup>
-              <optgroup label="National">
-                <option value="nat_bleu">National Bleu</option>
-                <option value="nat_rouge">National Rouge</option>
-              </optgroup>
-              <optgroup label="Haut niveau">
-                <option value="hn">Haut niveau (HN1 / HN2 / HN3)</option>
-                <option value="fiba">International FIBA</option>
-              </optgroup>
-              <option value="autre">Autre</option>
-            </select>
-            <p class="hint" id="niveau-plafond" aria-live="polite"></p>
-            <p class="err" id="err-niveau"></p>
-          </div>
-          <div class="field">
-            <label for="parcours">Parcours jeunes potentiels <span class="opt">(facultatif)</span></label>
-            <select class="input" id="parcours" name="parcours">
-              <option value="">Aucun</option>
-              <option value="potentiel_dep">Groupe potentiel départemental</option>
-              <option value="jpr_bleu">JPR Bleu</option>
-              <option value="jpr_rouge">JPR Rouge</option>
-            </select>
-            <p class="hint" id="parcours-plafond" aria-live="polite"></p>
-          </div>
-        </fieldset>
-
-        <fieldset>
           <legend>Zones de paiement</legend>
           <div class="grid2">
             <div class="field">
@@ -218,11 +166,53 @@ body{background:radial-gradient(circle at 0% 0%,rgba(29,78,216,.45),transparent 
             <label for="cd_autre">Précise ton comité</label>
             <input class="input" id="cd_autre" name="cd_autre" type="text" maxlength="60" placeholder="ex. CD25 Doubs">
           </div>
-          <label class="check">
-            <input type="checkbox" id="cf" name="cf">
-            <span>J'arbitre en <strong>Championnat de France</strong> (payé par virement national)</span>
-          </label>
         </fieldset>
+
+        <fieldset>
+          <legend>Niveau</legend>
+          <div class="field">
+            <label for="niveau">Niveau d'arbitrage principal</label>
+            <select class="input" id="niveau" name="niveau" required>
+              <option value="">Choisir…</option>
+              <optgroup label="Club">
+                <option value="club">Arbitre club</option>
+              </optgroup>
+              <optgroup label="Départemental">
+                <option value="dep3">Départemental groupe 3</option>
+                <option value="dep2">Départemental groupe 2</option>
+                <option value="dep1">Départemental groupe 1</option>
+              </optgroup>
+              <optgroup label="Région">
+                <option value="reg_j">Région jeunes (REG-J)</option>
+                <option value="reg3">Région 3 (hors Grand Est)</option>
+                <option value="reg2">Région 2 (REG-2)</option>
+                <option value="reg1">Région 1 (REG-1)</option>
+              </optgroup>
+              <optgroup label="Fédéral (Championnat de France)">
+                <option value="fed_bleu">Fédéral Bleu (stagiaire fédéral)</option>
+                <option value="fed_rouge">Fédéral Rouge</option>
+              </optgroup>
+              <optgroup label="National">
+                <option value="nat_bleu">National Bleu</option>
+                <option value="nat_rouge">National Rouge</option>
+              </optgroup>
+              <optgroup label="Haut niveau">
+                <option value="hn">Haut niveau (HN1 / HN2 / HN3)</option>
+                <option value="fiba">International FIBA</option>
+              </optgroup>
+              <option value="autre">Autre</option>
+            </select>
+            <p class="hint" id="niveau-plafond" aria-live="polite"></p>
+            <p class="err" id="err-niveau"></p>
+          </div>
+          <div class="field" id="f-parcours" hidden>
+            <label for="parcours" id="parcours-label">Parcours jeunes potentiels</label>
+            <select class="input" id="parcours" name="parcours"></select>
+            <p class="hint" id="parcours-plafond" aria-live="polite"></p>
+            <p class="err" id="err-parcours"></p>
+          </div>
+        </fieldset>
+
 
         <div class="actions">
           <button type="button" class="btn btn-ghost" data-prev>Retour</button>
@@ -272,20 +262,21 @@ body{background:radial-gradient(circle at 0% 0%,rgba(29,78,216,.45),transparent 
         </fieldset>
 
         <fieldset>
-          <legend>Véhicule <span class="opt" style="font-weight:500;color:var(--muted)">(facultatif)</span></legend>
+          <legend>Véhicule</legend>
           <div class="grid3">
             <div class="field">
               <label for="vehicule_modele">Modèle</label>
-              <input class="input" id="vehicule_modele" name="vehicule_modele" type="text" maxlength="60" placeholder="Peugeot 208">
+              <input class="input" id="vehicule_modele" name="vehicule_modele" type="text" required maxlength="60" placeholder="Peugeot 208">
+              <p class="err" id="err-vehicule_modele"></p>
             </div>
             <div class="field">
               <label for="vehicule_conso">Conso L/100</label>
-              <input class="input" id="vehicule_conso" name="vehicule_conso" type="number" inputmode="decimal" min="1" max="30" step="0.1" placeholder="5.6">
+              <input class="input" id="vehicule_conso" name="vehicule_conso" type="number" required inputmode="decimal" min="1" max="30" step="0.1" placeholder="5.6">
               <p class="err" id="err-vehicule_conso"></p>
             </div>
             <div class="field">
               <label for="vehicule_cv">CV fiscaux</label>
-              <input class="input" id="vehicule_cv" name="vehicule_cv" type="number" inputmode="numeric" min="1" max="30" step="1" placeholder="5">
+              <input class="input" id="vehicule_cv" name="vehicule_cv" type="number" required inputmode="numeric" min="1" max="30" step="1" placeholder="5">
               <p class="err" id="err-vehicule_cv"></p>
             </div>
           </div>
