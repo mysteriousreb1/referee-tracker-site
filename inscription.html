@@ -12,7 +12,7 @@
   <link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="img/logo-icon.png">
   <link rel="stylesheet" href="fonts/fonts.css">
-  <link rel="stylesheet" href="style.css?v=b70">
+  <link rel="stylesheet" href="style.css?v=b93">
   <style>/* b76 — même ambiance sombre que l'accueil */
 :root{color-scheme:dark;--bg:#060D1F;--surface:#0F1E3F;--surface-2:#132650;--text:#EEF2FA;--muted:#A3B0CB;--line:rgba(255,255,255,.12);--shadow:0 20px 50px rgba(0,0,0,.45);--shadow-sm:0 2px 8px rgba(0,0,0,.3);--focus:#FFD45C}
 body{background:radial-gradient(circle at 0% 0%,rgba(29,78,216,.45),transparent 40%),radial-gradient(circle at 100% 100%,rgba(245,180,0,.22),transparent 40%),#060D1F;background-attachment:fixed}
@@ -126,20 +126,49 @@ body{background:radial-gradient(circle at 0% 0%,rgba(29,78,216,.45),transparent 
             <label for="niveau">Niveau d'arbitrage principal</label>
             <select class="input" id="niveau" name="niveau" required>
               <option value="">Choisir…</option>
-              <option value="ecole">École d'arbitrage / arbitre club</option>
-              <option value="stagiaire_dep">Stagiaire départemental</option>
-              <option value="departemental">Départemental</option>
-              <option value="stagiaire_reg">Stagiaire régional</option>
-              <option value="regional3">Régional 3</option>
-              <option value="regional2">Régional 2</option>
-              <option value="jpr">Jeune Potentiel Régional (JPR)</option>
-              <option value="regional1">Régional 1</option>
-              <option value="cf_jeunes">Championnat de France – Jeunes</option>
-              <option value="cf">Championnat de France – NM3 / NF3 / NM2 / NF2</option>
-              <option value="haut_niveau">Haut niveau (HN)</option>
+              <optgroup label="Club">
+                <option value="club">Arbitre club</option>
+              </optgroup>
+              <optgroup label="Départemental">
+                <option value="dep3">Départemental groupe 3</option>
+                <option value="dep2">Départemental groupe 2</option>
+                <option value="dep1">Départemental groupe 1</option>
+              </optgroup>
+              <optgroup label="Passerelle vers la Région">
+                <option value="ear">EAR (année de formation)</option>
+              </optgroup>
+              <optgroup label="Région">
+                <option value="reg_j">Région jeunes (REG-J)</option>
+                <option value="reg3">Région 3 (hors Grand Est)</option>
+                <option value="reg2">Région 2 (REG-2)</option>
+                <option value="reg1">Région 1 (REG-1)</option>
+              </optgroup>
+              <optgroup label="Fédéral (Championnat de France)">
+                <option value="fed_bleu">Fédéral Bleu (stagiaire fédéral)</option>
+                <option value="fed_rouge">Fédéral Rouge</option>
+              </optgroup>
+              <optgroup label="National">
+                <option value="nat_bleu">National Bleu</option>
+                <option value="nat_rouge">National Rouge</option>
+              </optgroup>
+              <optgroup label="Haut niveau">
+                <option value="hn">Haut niveau (HN1 / HN2 / HN3)</option>
+                <option value="fiba">International FIBA</option>
+              </optgroup>
               <option value="autre">Autre</option>
             </select>
+            <p class="hint" id="niveau-plafond" aria-live="polite"></p>
             <p class="err" id="err-niveau"></p>
+          </div>
+          <div class="field">
+            <label for="parcours">Parcours jeunes potentiels <span class="opt">(facultatif)</span></label>
+            <select class="input" id="parcours" name="parcours">
+              <option value="">Aucun</option>
+              <option value="potentiel_dep">Groupe potentiel départemental</option>
+              <option value="jpr_bleu">JPR Bleu</option>
+              <option value="jpr_rouge">JPR Rouge</option>
+            </select>
+            <p class="hint" id="parcours-plafond" aria-live="polite"></p>
           </div>
         </fieldset>
 
@@ -344,6 +373,6 @@ body{background:radial-gradient(circle at 0% 0%,rgba(29,78,216,.45),transparent 
   </div>
 </footer>
 
-<script src="script.js?v=b88"></script>
+<script src="script.js?v=b93"></script>
 </body>
 </html>

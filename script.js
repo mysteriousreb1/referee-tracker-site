@@ -147,6 +147,20 @@
   drop.addEventListener("drop", (e) => { if (e.dataTransfer && e.dataTransfer.files) ajouterFichiers(e.dataTransfer.files); });
 
   /* ---------- Récapitulatif ---------- */
+  /* b93 — filière arbitre FFBB (Ligue Grand Est 2026-2027) : chaque grade donne un plafond ; CF coché d'office quand le grade ou le parcours y mène. */
+  const PLAFONDS = { club: "Matchs de ton club (pas de désignation officielle).", dep3: "Jusqu'à DM4, DM3, DF2 + jeunes.", dep2: "Jusqu'à DM2, DF1 + jeunes.", dep1: "Jusqu'à PRM + jeunes.",
+    ear: "Jeunes région + RF2 (RM2 surtout le jour d'examen).", reg_j: "Championnats jeunes région.", reg3: "R3 de ta ligue (n'existe pas dans le Grand Est).", reg2: "R2 masculin et féminin.", reg1: "PNM, PNF.",
+    fed_bleu: "NF3, U18, U15 France (NM3 en réserviste ou le jour d'examen).", fed_rouge: "NM3, NF2, U18 France (1er arbitre).", nat_bleu: "Espoirs, NF1, U18 (NM2 en réserviste ou le jour d'examen).", nat_rouge: "NM2, LF2, U18.",
+    hn: "Betclic Élite, Pro B, LFB, NM1 (désignations HNO).", fiba: "Compétitions FIBA, coupes d'Europe." };
+  const PARCOURS = { potentiel_dep: "Formations le week-end, désignations inchangées.", jpr_bleu: "2e arbitre U15 France le dimanche + doublage Région le samedi.", jpr_rouge: "2e arbitre NF3, U18 et U15 France le dimanche + doublage PN le samedi." };
+  const CF_AUTO = /^(fed_|nat_|hn|fiba)/;
+  function majNiveau() {
+    const n = val("niveau"), p = val("parcours"), pl = $("#niveau-plafond"), pp = $("#parcours-plafond");
+    if (pl) pl.textContent = PLAFONDS[n] ? "Plafond : " + PLAFONDS[n] + " Toujours désignable en dessous." : "";
+    if (pp) pp.textContent = PARCOURS[p] || "";
+    if (CF_AUTO.test(n) || /^jpr_/.test(p)) $("#cf").checked = true;
+  }
+  ["niveau", "parcours"].forEach((id) => { const e = $("#" + id); if (e) e.addEventListener("change", majNiveau); });
   function libelle(id) { const s = $("#" + id); return s.options[s.selectedIndex] ? s.options[s.selectedIndex].text : ""; }
   function remplirRecap() {
     const lignes = [
@@ -154,7 +168,7 @@
       ["Nom officiel", val("nom_ffbb")],
       ["E-mail de connexion", val("email_connexion")],
       ["E-mail convocations", val("email_ffbb") + " (" + libelle("fournisseur_mail") + ")"],
-      ["Niveau", libelle("niveau")],
+      ["Niveau", libelle("niveau") + (val("parcours") ? " · " + libelle("parcours") : "")],
       ["Comité", val("cd") === "AUTRE" && val("cd_autre") ? val("cd_autre") : libelle("cd")],
       ["Ligue", libelle("ligue")],
       ["Championnat de France", $("#cf").checked ? "Oui" : "Non"],
@@ -183,6 +197,7 @@
       email_ffbb: val("email_ffbb").toLowerCase(),
       fournisseur_mail: val("fournisseur_mail"),
       niveau: val("niveau"),
+      parcours: val("parcours"),
       zones: { cd: val("cd"), cd_autre: val("cd") === "AUTRE" ? val("cd_autre") : "", ligue: val("ligue"), cf: $("#cf").checked },
       adresse: { adresse: val("adresse"), code_postal: val("code_postal"), ville: val("ville") },
       vehicule: { modele: val("vehicule_modele"), conso: val("vehicule_conso") ? Number(val("vehicule_conso")) : null, cv: val("vehicule_cv") ? Number(val("vehicule_cv")) : null },
