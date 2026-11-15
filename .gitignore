@@ -1,0 +1,13 @@
+# Referee Tracker — site vitrine — fichiers à ne jamais publier
+.DS_Store
+._*
+.claude/
+.env
+.env.*
+*.gs
+remplacements.txt
+*.key
+*.pem
+
+# --- Graphify (carte du code, locale) ---
+graphify-out/
