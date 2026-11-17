@@ -30,7 +30,7 @@
   <link rel="preload" href="fonts/montserrat-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="img/app/accueil.webp" as="image" type="image/webp">
   <link rel="stylesheet" href="fonts/fonts.css">
-  <link rel="stylesheet" href="site.css?v=b104b">
+  <link rel="stylesheet" href="site.css?v=b108">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
     {"@type":"Organization","@id":"https://www.referee-tracker.fr/#org","name":"Referee Tracker","url":"https://www.referee-tracker.fr/","logo":"https://www.referee-tracker.fr/img/logo-icon.png","email":"contact@referee-tracker.fr"},
@@ -42,6 +42,7 @@
       {"@type":"Question","name":"Où sont stockées mes données ?","acceptedAnswer":{"@type":"Answer","text":"Dans l'Union européenne, chiffrées en transit, visibles uniquement par toi via ton compte."}},
       {"@type":"Question","name":"Les montants affichés sont-ils officiels ?","acceptedAnswer":{"@type":"Answer","text":"Ce sont des calculs faits à partir des barèmes de ton comité, de ta ligue et de ta fédération et de tes kilomètres. La convocation officielle reste la référence."}},
       {"@type":"Question","name":"Faut-il installer quelque chose ?","acceptedAnswer":{"@type":"Answer","text":"Non : Referee Tracker fonctionne dans le navigateur de ton téléphone ou de ton ordinateur et s'ajoute à l'écran d'accueil comme une app, avec ses notifications."}},
+      {"@type":"Question","name":"C'est quoi REF CLIPS ?","acceptedAnswer":{"@type":"Answer","text":"L'app d'analyse vidéo de la famille Referee Tracker, pour Mac et Windows : tu marques tes décisions pendant que tu regardes ton match, l'app en fait des clips et un rapport, avec ton compte Referee Tracker."}},
       {"@type":"Question","name":"Est-ce un outil officiel ?","acceptedAnswer":{"@type":"Answer","text":"Non. Referee Tracker est un projet indépendant créé par un arbitre, sans lien avec les instances du basket. Il t'aide à organiser ce que tu reçois et ce que tu fais."}}
     ]}
   ]}
@@ -58,6 +59,7 @@
       <a class="l" href="#calculateur">Calculateur</a>
       <a class="l" href="#atouts">Atouts</a>
       <a class="l" href="#fonctions">Fonctions</a>
+      <a class="l" href="#refclips">REF CLIPS</a>
       <a class="l" href="guides/">Guides</a>
       <a class="l" href="#faq">FAQ</a>
       <a class="btn btn-ghost btn-sm" href="https://app.referee-tracker.fr">Se connecter</a>
@@ -324,6 +326,43 @@
   </div>
 </section>
 
+<!-- REF CLIPS : l'app d'analyse vidéo de la famille Referee Tracker -->
+<section id="refclips" aria-labelledby="h-rc">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Nouveau · sur Mac et Windows</span>
+      <h2 id="h-rc">REF CLIPS : revois tes matchs comme un formateur.</h2>
+      <p>Ton match est filmé ? REF CLIPS t'aide à le décortiquer. Tu regardes la vidéo, tu tapes le code de la décision au clavier, et le passage est marqué en une seconde. À la fin, l'app découpe chaque action en clip, prête à revoir ou à envoyer à ton formateur.</p>
+    </div>
+    <div class="rc rv">
+      <div class="rc-t">
+        <ul class="rc-l">
+          <li><b>Marquage au clavier</b><span>tape « marcher » ou « antisportive », Entrée : c'est noté, avec le bon quart-temps.</span></li>
+          <li><b>Dessin sur l'image</b><span>une flèche, un cercle sur ton placement : la vidéo se fige 3 secondes sur ton dessin.</span></li>
+          <li><b>Clips exacts et rapport PDF</b><span>chaque décision devient un clip, jusqu'à la 4K, avec un rapport clair de ton match.</span></li>
+          <li><b>Vidéo par lien</b><span>le club t'envoie un lien Drive, Dropbox ou WeTransfer : l'app récupère la vidéo.</span></li>
+          <li><b>Ton compte Referee Tracker</b><span>pas de nouveau compte : tes matchs de Referee Tracker apparaissent directement.</span></li>
+        </ul>
+        <div class="rc-cta">
+          <a class="btn btn-gold" href="https://clips.referee-tracker.fr/">Découvrir REF CLIPS</a>
+          <span class="muted">Gratuit pendant l'accès anticipé</span>
+        </div>
+      </div>
+      <div class="rc-v">
+        <div class="pc-tabs rc-tabs"><button class="on">Marquage</button><button>Dessin</button><button>Rapport</button></div>
+        <div class="pc">
+          <div class="cadre" id="rcCadre">
+            <img class="on" loading="lazy" src="img/refclips/codes.webp" width="1512" height="917" alt="REF CLIPS : choix du code de la décision pendant la vidéo">
+            <img loading="lazy" src="img/refclips/dessin.webp" width="1512" height="917" alt="REF CLIPS : flèche et cercle dessinés sur l'image du match">
+            <img loading="lazy" src="img/refclips/rapport.webp" width="1512" height="917" alt="REF CLIPS : rapport PDF du match">
+          </div>
+          <div class="pied" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- SÉCURITÉ -->
 <section id="securite" aria-labelledby="h-secu">
   <div class="wrap">
@@ -351,6 +390,7 @@
       <details><summary>Où sont stockées mes données ?</summary><p>Dans l'Union européenne, chiffrées en transit, visibles uniquement par toi. Détails dans la <a href="https://app.referee-tracker.fr/confidentialite.html">politique de confidentialité</a>.</p></details>
       <details><summary>Les montants sont-ils officiels ?</summary><p>Ce sont des calculs faits à partir des barèmes de ton comité, de ta ligue et de ta fédération, et de tes kilomètres réels. La convocation officielle reste la référence. <a href="guides/indemnites-arbitre-basket.html">Comment l'indemnité est calculée</a>.</p></details>
       <details><summary>Faut-il installer quelque chose ?</summary><p>Non : l'app fonctionne dans le navigateur de ton téléphone ou de ton ordinateur et s'ajoute à l'écran d'accueil comme une application, avec ses notifications.</p></details>
+      <details><summary>C'est quoi REF CLIPS ?</summary><p>L'app d'analyse vidéo de la famille Referee Tracker, pour Mac et Windows. Tu marques tes décisions pendant que tu regardes ton match, l'app en fait des clips et un rapport. Elle s'ouvre avec ton compte Referee Tracker. <a href="https://clips.referee-tracker.fr/">Tout savoir sur REF CLIPS</a>.</p></details>
       <details><summary>Est-ce un outil officiel ?</summary><p>Non. Referee Tracker est un projet indépendant, créé par un arbitre, sans lien avec les instances du basket.</p></details>
     </div>
   </div>
@@ -379,6 +419,7 @@
       <a href="guides/">Guides</a>
       <a href="guides/indemnites-arbitre-basket.html">Indemnités d'arbitre</a>
       <a href="guides/organiser-saison-arbitre-basket.html">Organiser sa saison</a>
+      <a href="https://clips.referee-tracker.fr/">REF CLIPS, l'analyse vidéo</a>
       <a href="https://app.referee-tracker.fr/mentions-legales.html">Mentions légales</a>
       <a href="https://app.referee-tracker.fr/confidentialite.html">Confidentialité</a>
       <a href="https://app.referee-tracker.fr/cgu.html">Conditions</a>
@@ -386,6 +427,6 @@
     </nav>
   </div>
 </footer>
-<script src="site.js?v=b76" defer></script>
+<script src="site.js?v=b108" defer></script>
 </body>
 </html>

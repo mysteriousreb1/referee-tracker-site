@@ -84,11 +84,12 @@
   }
 
   /* Ordinateur */
-  var pcCadre = $("#pcCadre"), pcTabs = $$(".pc-tabs button");
-  if (pcCadre) {
-    var c3 = carrousel(pcCadre, 5000, function (k) { pcTabs.forEach(function (b, x) { b.classList.toggle("on", x === k); }); });
-    pcTabs.forEach(function (b, x) { b.addEventListener("click", function () { c3.va(x); }); });
-  }
+  [["#pcCadre", ".pc-tabs:not(.rc-tabs) button"], ["#rcCadre", ".rc-tabs button"]].forEach(function (o) {
+    var cadre = $(o[0]), tabs = $$(o[1]);
+    if (!cadre) return;
+    var c3 = carrousel(cadre, 5000, function (k) { tabs.forEach(function (b, x) { b.classList.toggle("on", x === k); }); });
+    tabs.forEach(function (b, x) { b.addEventListener("click", function () { c3.va(x); }); });
+  });
 
   /* Halo qui suit la souris sur les cartes */
   $$(".carte").forEach(function (c) {
