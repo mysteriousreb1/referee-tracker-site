@@ -131,6 +131,7 @@ a.pill{text-decoration:none}a.pill:hover{border-color:rgba(245,180,0,.6)}
 @media (max-width:860px){.etapes{grid-template-columns:1fr}}
 .etape{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:30px 26px;position:relative}
 .etape .n{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;font:800 22px/1 var(--mono);color:#111;background:linear-gradient(180deg,var(--gold2),var(--gold));margin-bottom:18px;box-shadow:0 10px 24px rgba(245,180,0,.3)}
+.etape .n svg{width:55%;height:55%}
 .etape p{color:var(--muted);margin:0}
 .etape code{font-family:var(--mono);font-size:.88em;color:var(--gold2)}
 
