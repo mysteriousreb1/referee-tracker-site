@@ -9,6 +9,8 @@
   var top = $(".top");
   function majTop() { if (top) top.classList.toggle("solid", window.scrollY > 30); }
   window.addEventListener("scroll", majTop, { passive: true }); majTop();
+  /* Menu téléphone : se referme après un choix */
+  $$(".menu-mob a").forEach(function (l) { l.addEventListener("click", function () { var d = l.closest("details"); if (d) d.open = false; }); });
 
   /* Apparition au défilement + compteurs */
   function compter(el) {
