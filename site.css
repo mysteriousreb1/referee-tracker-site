@@ -286,3 +286,73 @@ footer a:hover{color:#fff}
 .menu-mob-p a{padding:12px 14px;border-radius:12px;text-decoration:none;color:#fff;font-weight:600;font-size:15px}
 .menu-mob-p a:hover{background:rgba(255,255,255,.07)}
 @media (max-width:900px){.menu-mob{display:block}}
+
+/* ===== b124 — téléphone : page courte, lisible, tournée vers l'inscription ===== */
+.cta-fixe{display:none}
+@media (max-width:760px){
+  section{padding:52px 0}
+  .head{margin-bottom:24px}.head p{font-size:15px}
+  h2{font-size:clamp(1.5rem,6.4vw,1.9rem);line-height:1.15}
+  .mob-off,.defile,.toast,.points{display:none!important}
+  /* héros : titre, une phrase, bouton, téléphone réduit */
+  .hero{padding:92px 0 40px}
+  .hero-g{gap:28px}
+  .hero .lead{font-size:15.5px}
+  .hero .lead strong{display:block;margin-bottom:6px}
+  .cta{margin:22px 0 16px;justify-content:center}.cta .btn{width:100%;justify-content:center}
+  .proof{display:grid;grid-template-columns:1fr 1fr;gap:8px 12px;font-size:12.5px;text-align:left;max-width:340px;margin:0 auto}
+  .proof li{display:flex;gap:6px;align-items:flex-start}
+  .phone{width:min(210px,58vw);border-radius:34px;padding:8px}
+  /* étapes compactes */
+  .etapes{gap:10px}.etape{padding:18px 18px 16px 64px}.etape .n{position:absolute;left:16px;top:18px;margin:0}
+  .etape h3{font-size:16px;margin:0 0 4px}.etape p{font-size:14px;margin:0}
+  /* visite : onglets en bandeau qui défile au doigt */
+  .visite{gap:20px}
+  .onglets{flex-direction:row;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;padding-bottom:6px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .onglets::-webkit-scrollbar{display:none}
+  .onglet{flex:0 0 78%;scroll-snap-align:start;padding:14px 16px}
+  .onglet p{max-height:none;opacity:1;margin-top:8px;font-size:13.5px}
+  .visite .phone{width:min(200px,55vw)}
+  /* atouts : 3 cartes qu'on fait glisser */
+  .spots{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 -20px;padding:0 20px 8px;scrollbar-width:none}
+  .spots::-webkit-scrollbar{display:none}
+  .spot{flex:0 0 86%;scroll-snap-align:center;margin-top:0;display:flex;flex-direction:column;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px}
+  .spot-t p{font-size:14px}.spot .mock{padding:16px;box-shadow:none}.mk-big{font-size:28px!important}
+  /* REF CLIPS : une capture, la liste en titres */
+  .rc{padding:18px;gap:18px}.rc-tabs{display:none}.rc-l{gap:8px;margin-bottom:18px}.rc-l span{display:none}.rc-l b{font-size:15px}
+  .rc-cta .btn{width:100%;justify-content:center}
+  /* calculateur */
+  .calc form{padding:20px}.res{padding:20px}
+  /* fonctions : grille 2 x 4, titres seuls */
+  .cartes{grid-template-columns:1fr 1fr;gap:10px}
+  #fonctions .carte{padding:16px 14px}#fonctions .carte p{display:none}#fonctions .carte h3{font-size:14.5px;margin:10px 0 0}
+  #fonctions .ico{width:36px;height:36px}
+  /* confiance et basket français, compacts */
+  .ffbb{padding:20px;gap:16px}.ffbb-l{grid-template-columns:1fr 1fr;gap:8px}.ffbb-l li{padding:12px}
+  .confiance{grid-template-columns:1fr 1fr;gap:10px}.confiance article{padding:16px}.confiance h3{font-size:15px}.confiance p{font-size:13px}
+  /* guides : liste courte */
+  #guides .cartes{grid-template-columns:1fr;gap:8px}#guides .carte{padding:14px 16px}#guides .carte p{display:none}#guides .carte h3{margin:0;font-size:15px}
+  .faq summary{padding:16px 0;font-size:15px}
+  .final{padding:40px 20px;border-radius:24px}
+  /* bouton d'inscription toujours à portée de pouce */
+  .cta-fixe{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:60;justify-content:center;align-items:center;gap:8px;padding:15px 20px;border-radius:999px;font:800 15.5px/1 var(--font);color:#111;text-decoration:none;background:linear-gradient(180deg,var(--gold2),var(--gold));box-shadow:0 12px 30px rgba(0,0,0,.45),0 6px 20px rgba(245,180,0,.35);transform:translateY(140%);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+  .cta-fixe svg{width:18px;height:18px}
+  .cta-fixe.on{transform:none}
+  body{padding-bottom:84px}
+}
+@media (max-width:760px){.etape .n{width:36px;height:36px;font-size:16px;border-radius:11px}#fonctions .ico{margin-bottom:0}}
+@media (max-width:760px){.visite>*,.hero-g>*,.rc>*,.calc>*{min-width:0}}
+@media (max-width:760px){
+  .hero .mob-cache,.hero .cta .btn-ghost,.res .note{display:none}
+  .hero .pill{font-size:12px;padding:7px 12px;margin-bottom:16px}
+  .hero h1{font-size:clamp(2rem,9vw,2.5rem);margin:0 0 12px}
+  .hero .phone{width:min(185px,50vw)}
+  .pied{gap:24px}.pied-marque p{display:none}.pied-bas{margin-top:28px}
+  footer{padding:40px 0 20px}
+}
+/* guides : image illustrée et bloc « À lire aussi » (maillage) */
+.guide .fig{margin:30px 0}.guide .fig img{display:block;width:100%;height:auto;border-radius:16px;border:1px solid var(--line);box-shadow:0 24px 60px rgba(0,0,0,.4)}
+.guide .fig.tel img{max-width:260px;margin:0 auto;border-radius:28px}
+.guide .fig figcaption{margin-top:10px;font-size:13px;color:var(--muted);text-align:center}
+.lire{margin-top:48px;padding:24px 26px;border-radius:var(--r);background:var(--card);border:1px solid var(--line)}
+.lire h2{margin:0 0 12px!important;font-size:1.15rem!important}.lire ul{margin:0;padding-left:18px;display:grid;gap:8px}
