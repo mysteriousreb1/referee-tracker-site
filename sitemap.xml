@@ -1,16 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url><loc>https://www.referee-tracker.fr/</loc><lastmod>2026-11-18</lastmod><priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.referee-tracker.fr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.referee-tracker.fr/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.referee-tracker.fr/"/>
     <image:image><image:loc>https://www.referee-tracker.fr/img/app/accueil.webp</image:loc></image:image>
     <image:image><image:loc>https://www.referee-tracker.fr/img/app/paiements.webp</image:loc></image:image>
     <image:image><image:loc>https://www.referee-tracker.fr/img/app/stats.webp</image:loc></image:image>
     <image:image><image:loc>https://www.referee-tracker.fr/img/app/pc-accueil.webp</image:loc></image:image>
   </url>
-  <url><loc>https://www.referee-tracker.fr/guides/application-arbitre-basket.html</loc><lastmod>2026-11-18</lastmod><priority>0.9</priority></url>
-  <url><loc>https://www.referee-tracker.fr/guides/suivi-indemnites-paiements-arbitre.html</loc><lastmod>2026-11-18</lastmod><priority>0.9</priority></url>
-  <url><loc>https://www.referee-tracker.fr/guides/analyse-video-arbitre-basket.html</loc><lastmod>2026-11-18</lastmod><priority>0.9</priority></url>
-  <url><loc>https://www.referee-tracker.fr/guides/</loc><lastmod>2026-11-18</lastmod><priority>0.7</priority></url>
-  <url><loc>https://www.referee-tracker.fr/guides/indemnites-arbitre-basket.html</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.referee-tracker.fr/guides/organiser-saison-arbitre-basket.html</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.referee-tracker.fr/inscription.html</loc><lastmod>2026-11-18</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.referee-tracker.fr/en/</loc><lastmod>2026-11-18</lastmod><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.referee-tracker.fr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.referee-tracker.fr/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.referee-tracker.fr/"/>
+    <image:image><image:loc>https://www.referee-tracker.fr/img/app/accueil.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.referee-tracker.fr/img/app/paiements.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.referee-tracker.fr/img/app/stats.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.referee-tracker.fr/img/app/pc-accueil.webp</image:loc></image:image>
+  </url>
+  <url><loc>https://www.referee-tracker.fr/guides/</loc><lastmod>2026-11-18</lastmod><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.referee-tracker.fr/guides/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.referee-tracker.fr/en/guides/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.referee-tracker.fr/guides/"/>
+  </url>
+  <url><loc>https://www.referee-tracker.fr/en/guides/</loc><lastmod>2026-11-18</lastmod><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.referee-tracker.fr/guides/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.referee-tracker.fr/en/guides/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.referee-tracker.fr/guides/"/>
+  </url>
+  <url><loc>https://www.referee-tracker.fr/guides/application-arbitre-basket.html</loc><lastmod>2026-11-18</lastmod><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.referee-tracker.fr/guides/application-arbitre-basket.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.referee-tracker.fr/en/guides/basketball-referee-app.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.referee-tracker.fr/guides/application-arbitre-basket.html"/>
+  </url>
+  <url><loc>https://www.referee-tracker.fr/en/guides/basketball-referee-app.html</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.referee-tracker.fr/guides/application-arbitre-basket.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.referee-tracker.fr/en/guides/basketball-referee-app.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.referee-tracker.fr/guides/application-arbitre-basket.html"/>
+  </url>
+  <url><loc>https://www.referee-tracker.fr/guides/suivi-indemnites-paiements-arbitre.html</loc><lastmod>2026-11-18</lastmod><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.referee-tracker.fr/guides/suivi-indemnites-paiements-arbitre.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.referee-tracker.fr/en/guides/referee-fees-payment-tracking.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.referee-tracker.fr/guides/suivi-indemnites-paiements-arbitre.html"/>
+  </url>
+  <url><loc>https://www.referee-tracker.fr/en/guides/referee-fees-payment-tracking.html</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.referee-tracker.fr/guides/suivi-indemnites-paiements-arbitre.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.referee-tracker.fr/en/guides/referee-fees-payment-tracking.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.referee-tracker.fr/guides/suivi-indemnites-paiements-arbitre.html"/>
+  </url>
+  <url><loc>https://www.referee-tracker.fr/guides/analyse-video-arbitre-basket.html</loc><lastmod>2026-11-18</lastmod><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.referee-tracker.fr/guides/analyse-video-arbitre-basket.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.referee-tracker.fr/en/guides/basketball-referee-video-analysis.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.referee-tracker.fr/guides/analyse-video-arbitre-basket.html"/>
+  </url>
+  <url><loc>https://www.referee-tracker.fr/en/guides/basketball-referee-video-analysis.html</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.referee-tracker.fr/guides/analyse-video-arbitre-basket.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.referee-tracker.fr/en/guides/basketball-referee-video-analysis.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.referee-tracker.fr/guides/analyse-video-arbitre-basket.html"/>
+  </url>
+  <url><loc>https://www.referee-tracker.fr/guides/indemnites-arbitre-basket.html</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.referee-tracker.fr/guides/indemnites-arbitre-basket.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.referee-tracker.fr/en/guides/basketball-referee-fees.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.referee-tracker.fr/guides/indemnites-arbitre-basket.html"/>
+  </url>
+  <url><loc>https://www.referee-tracker.fr/en/guides/basketball-referee-fees.html</loc><lastmod>2026-11-18</lastmod><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.referee-tracker.fr/guides/indemnites-arbitre-basket.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.referee-tracker.fr/en/guides/basketball-referee-fees.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.referee-tracker.fr/guides/indemnites-arbitre-basket.html"/>
+  </url>
+  <url><loc>https://www.referee-tracker.fr/guides/organiser-saison-arbitre-basket.html</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.referee-tracker.fr/guides/organiser-saison-arbitre-basket.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.referee-tracker.fr/en/guides/referee-season-planning.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.referee-tracker.fr/guides/organiser-saison-arbitre-basket.html"/>
+  </url>
+  <url><loc>https://www.referee-tracker.fr/en/guides/referee-season-planning.html</loc><lastmod>2026-11-18</lastmod><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.referee-tracker.fr/guides/organiser-saison-arbitre-basket.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.referee-tracker.fr/en/guides/referee-season-planning.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.referee-tracker.fr/guides/organiser-saison-arbitre-basket.html"/>
+  </url>
 </urlset>

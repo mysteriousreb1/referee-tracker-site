@@ -48,6 +48,7 @@ section{padding:96px 0;position:relative}
 .nav a.l{text-decoration:none;color:var(--muted);font-weight:600;font-size:14px;transition:color .2s}
 .nav a.l:hover{color:#fff}
 @media (max-width:900px){.nav a.l,.nav .btn-ghost{display:none}}
+@media (max-width:900px){.nav .btn-ghost.lang{display:inline-flex}}.nav .lang{padding-left:12px;padding-right:12px}
 
 /* ---- héros ---- */
 .hero{padding:150px 0 90px;overflow:hidden;isolation:isolate}

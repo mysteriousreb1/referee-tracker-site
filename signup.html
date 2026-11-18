@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Request access — Referee Tracker, the app for basketball referees</title>
+  <meta name="description" content="Request access to Referee Tracker, the tracking app for basketball referees: we set up your account for your area and your level.">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#0A1F44">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; script-src 'self'; connect-src 'self' https://jlstedchnmdteazuqbly.supabase.co https://data.geopf.fr; object-src 'none'; base-uri 'none'; form-action 'self'">
+  <link rel="canonical" href="https://www.referee-tracker.fr/signup.html">
+  <link rel="alternate" hreflang="fr" href="https://www.referee-tracker.fr/inscription.html">
+  <link rel="alternate" hreflang="en" href="https://www.referee-tracker.fr/signup.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.referee-tracker.fr/inscription.html">
+  <link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="img/logo-icon.png">
+  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="stylesheet" href="style.css?v=b121">
+  <style>/* b76 — same dark look as the home page */
+:root{color-scheme:dark;--bg:#060D1F;--surface:#0F1E3F;--surface-2:#132650;--text:#EEF2FA;--muted:#A3B0CB;--line:rgba(255,255,255,.12);--shadow:0 20px 50px rgba(0,0,0,.45);--shadow-sm:0 2px 8px rgba(0,0,0,.3);--focus:#FFD45C}
+body{background:radial-gradient(circle at 0% 0%,rgba(29,78,216,.45),transparent 40%),radial-gradient(circle at 100% 100%,rgba(245,180,0,.22),transparent 40%),#060D1F;background-attachment:fixed}
+.progress li.active{color:var(--gold)!important}.progress li.active b{background:var(--gold)!important;color:#111!important}
+.check-opt{border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:10px 14px 4px;margin:14px 0}.check-opt legend{font-size:12px;color:var(--muted);padding:0 6px}
+.topbar{background:rgba(6,13,31,.78)!important;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.09)}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenu">Skip to content</a>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="en/" aria-label="Referee Tracker — home">
+      <img src="img/logo-icon-sm.png" alt="" width="36" height="33"><img class="wm" src="img/logo-wordmark-sm.png" alt="Referee Tracker" width="85" height="32">
+    </a>
+    <nav class="nav" aria-label="Main navigation">
+      <a class="btn btn-ghost btn-sm lang" href="inscription.html" hreflang="fr" lang="fr">FR</a>
+      <a class="btn btn-outline btn-sm" href="https://app.referee-tracker.fr">Open the app</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu" class="page-form">
+  <div class="wrap form-shell">
+    <div class="form-intro">
+      <h1>Request access</h1>
+      <p>Four steps, five minutes. We then set up your account by hand for your area and your level.</p>
+    </div>
+
+    <div class="progress" id="progress" aria-label="Progress">
+      <ol>
+        <li class="active" data-step="1"><b>1</b><span>Identity</span></li>
+        <li data-step="2"><b>2</b><span>Appointments</span></li>
+        <li data-step="3"><b>3</b><span>History</span></li>
+        <li data-step="4"><b>4</b><span>Consent</span></li>
+      </ol>
+      <div class="bar" role="progressbar" aria-valuemin="1" aria-valuemax="4" aria-valuenow="1" aria-label="Step 1 of 4"><span id="bar"></span></div>
+    </div>
+
+    <form id="form" class="panel" novalidate autocomplete="on">
+
+      <!-- STEP 1 -->
+      <section class="step-panel" data-panel="1" aria-labelledby="h-1">
+        <h2 id="h-1">Who are you?</h2>
+        <p class="help">This information is used to create your account and to recognise your name on appointments.</p>
+
+        <div class="grid2">
+          <div class="field">
+            <label for="prenom">First name</label>
+            <input class="input" id="prenom" name="prenom" type="text" autocomplete="given-name" required maxlength="60" placeholder="Julie">
+            <p class="err" id="err-prenom"></p>
+          </div>
+          <div class="field">
+            <label for="telephone">Phone</label>
+            <input class="input" id="telephone" name="telephone" type="tel" required autocomplete="tel" inputmode="tel" maxlength="20" placeholder="06 12 34 56 78">
+            <p class="err" id="err-telephone"></p>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="nom_ffbb">LAST NAME and first name, as on your appointments</label>
+          <input class="input" id="nom_ffbb" name="nom_ffbb" type="text" autocomplete="off" required maxlength="80" placeholder="MARTIN JULIE" style="text-transform:uppercase">
+          <small>Exactly as on your appointments, in capitals. E.g. <strong>MARTIN JULIE</strong>. This is how the app recognises you among the appointed referees.</small>
+          <p class="err" id="err-nom_ffbb"></p>
+        </div>
+
+        <div class="field">
+          <label for="email_connexion">Login e-mail</label>
+          <input class="input" id="email_connexion" name="email_connexion" type="email" autocomplete="email" inputmode="email" required maxlength="120" placeholder="julie.martin@example.com">
+          <small>To log in to the app and receive your first-login code.</small>
+          <p class="err" id="err-email_connexion"></p>
+        </div>
+
+        <div class="actions">
+          <button type="button" class="btn btn-gold" data-next>Continue</button>
+        </div>
+      </section>
+
+      <!-- STEP 2 -->
+      <section class="step-panel" data-panel="2" hidden aria-labelledby="h-2">
+        <h2 id="h-2">Your appointments</h2>
+        <p class="help">To set up appointment reading, fee scales and payment dates for your area.</p>
+
+        <fieldset>
+          <legend>Receiving</legend>
+          <div class="field">
+            <label for="email_ffbb">E-mail that receives your appointments</label>
+            <input class="input" id="email_ffbb" name="email_ffbb" type="email" inputmode="email" required maxlength="120" placeholder="Often the same as your login e-mail">
+            <small>The address registered with your federation, where your appointments arrive.</small>
+            <p class="err" id="err-email_ffbb"></p>
+          </div>
+          <div class="field">
+            <label for="fournisseur_mail">Provider of this mailbox</label>
+            <select class="input" id="fournisseur_mail" name="fournisseur_mail" required>
+              <option value="">Choose…</option>
+              <option value="gmail">Gmail</option>
+              <option value="orange">Orange</option>
+              <option value="outlook">Outlook / Hotmail</option>
+              <option value="icloud">iCloud</option>
+              <option value="autre">Other</option>
+            </select>
+            <small>We'll send you auto-forwarding instructions for your mailbox.</small>
+            <p class="err" id="err-fournisseur_mail"></p>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Payment areas</legend>
+          <div class="grid2">
+            <div class="field">
+              <label for="cd">County committee</label>
+              <select class="input" id="cd" name="cd" required>
+                <option value="">Choose…</option>
+                <option value="CD67">CD67 — Bas-Rhin</option>
+                <option value="CD68">CD68 — Haut-Rhin</option>
+                <option value="CD54">CD54 — Meurthe-et-Moselle</option>
+                <option value="CD55">CD55 — Meuse</option>
+                <option value="CD57">CD57 — Moselle</option>
+                <option value="CD88">CD88 — Vosges</option>
+                <option value="CD08">CD08 — Ardennes</option>
+                <option value="CD10">CD10 — Aube</option>
+                <option value="CD51">CD51 — Marne</option>
+                <option value="CD52">CD52 — Haute-Marne</option>
+                <option value="AUTRE">Other</option>
+              </select>
+              <p class="err" id="err-cd"></p>
+            </div>
+            <div class="field">
+              <label for="ligue">Regional league</label>
+              <select class="input" id="ligue" name="ligue" required>
+                <option value="">Choose…</option>
+                <option value="LRGEB">Grand Est (LRGEB)</option>
+                <option value="ARA">Auvergne-Rhône-Alpes</option>
+                <option value="BFC">Bourgogne-Franche-Comté</option>
+                <option value="BRE">Bretagne</option>
+                <option value="CVL">Centre-Val de Loire</option>
+                <option value="COR">Corse</option>
+                <option value="HDF">Hauts-de-France</option>
+                <option value="IDF">Île-de-France</option>
+                <option value="NOR">Normandie</option>
+                <option value="NAQ">Nouvelle-Aquitaine</option>
+                <option value="OCC">Occitanie</option>
+                <option value="PDL">Pays de la Loire</option>
+                <option value="PACA">Provence-Alpes-Côte d'Azur</option>
+                <option value="AUTRE">Other</option>
+              </select>
+              <p class="err" id="err-ligue"></p>
+            </div>
+          </div>
+          <div class="field" id="f-cd-autre" hidden>
+            <label for="cd_autre">Specify your committee</label>
+            <input class="input" id="cd_autre" name="cd_autre" type="text" maxlength="60" placeholder="e.g. CD25 Doubs">
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Level</legend>
+          <div class="field">
+            <label for="niveau">Main refereeing level</label>
+            <select class="input" id="niveau" name="niveau" required>
+              <option value="">Choose…</option>
+              <optgroup label="Club">
+                <option value="club">Club referee</option>
+              </optgroup>
+              <optgroup label="County">
+                <option value="dep3">County group 3</option>
+                <option value="dep2">County group 2</option>
+                <option value="dep1">County group 1</option>
+              </optgroup>
+              <optgroup label="Bridge">
+                <option value="ear">EAR</option>
+              </optgroup>
+              <optgroup label="Regional">
+                <option value="reg_j">Regional youth (REG-J)</option>
+                <option value="reg3">Regional 3 (outside Grand Est)</option>
+                <option value="reg2">Regional 2 (REG-2)</option>
+                <option value="reg1">Regional 1 (REG-1)</option>
+              </optgroup>
+              <optgroup label="Federal (national championships)">
+                <option value="fed_bleu">Federal Blue (federal trainee)</option>
+                <option value="fed_rouge">Federal Red</option>
+              </optgroup>
+              <optgroup label="National">
+                <option value="nat_bleu">National Blue</option>
+                <option value="nat_rouge">National Red</option>
+              </optgroup>
+              <optgroup label="Top level">
+                <option value="hn">Top level (HN1 / HN2 / HN3)</option>
+                <option value="fiba">FIBA international</option>
+              </optgroup>
+              <option value="autre">Other</option>
+            </select>
+            <p class="hint" id="niveau-plafond" aria-live="polite"></p>
+            <p class="err" id="err-niveau"></p>
+          </div>
+          <div class="field" id="f-parcours" hidden>
+            <label for="parcours" id="parcours-label">Young potential pathway</label>
+            <select class="input" id="parcours" name="parcours"></select>
+            <p class="hint" id="parcours-plafond" aria-live="polite"></p>
+            <p class="err" id="err-parcours"></p>
+          </div>
+        </fieldset>
+
+
+        <div class="actions">
+          <button type="button" class="btn btn-ghost" data-prev>Back</button>
+          <button type="button" class="btn btn-gold" data-next>Continue</button>
+        </div>
+      </section>
+
+      <!-- STEP 3 -->
+      <section class="step-panel" data-panel="3" hidden aria-labelledby="h-3">
+        <h2 id="h-3">Your history and your trips</h2>
+        <p class="help">So you start with your season already filled in and accurate mileage.</p>
+
+        <fieldset>
+          <legend>Past appointments <span class="opt" style="font-weight:500;color:var(--muted)">(optional but recommended)</span></legend>
+          <div class="info">Drop the PDFs of this season's appointments here (or previous seasons'). Without them, the app will only see upcoming appointments.</div>
+          <div class="drop" id="drop">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4"/><path d="m7 9 5-5 5 5"/><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>
+            <p>Drag your PDFs here</p>
+            <label class="btn btn-navy btn-sm" for="fichiers">Choose files<input type="file" id="fichiers" accept="application/pdf,.pdf" multiple></label>
+            <small style="display:block;margin-top:10px;color:var(--muted)">PDF only · 20 MB max per file · up to 300 files</small>
+          </div>
+          <p class="files-count" id="files-count" aria-live="polite"></p>
+          <ul class="files" id="files" aria-label="Selected files"></ul>
+          <p class="err" id="err-fichiers"></p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Starting address</legend>
+          <div class="field">
+            <label for="adresse">Address</label>
+            <div class="adr-wrap">
+              <input class="input" id="adresse" name="adresse" type="text" autocomplete="off" required maxlength="120" placeholder="12 rue des Sports, Haguenau" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="adr-liste">
+              <ul class="adr-liste" id="adr-liste" role="listbox" hidden></ul>
+            </div>
+            <p class="hint" id="adr-etat" aria-live="polite"></p>
+            <p class="err" id="err-adresse"></p>
+          </div>
+          <div class="grid2">
+            <div class="field">
+              <label for="code_postal">Postcode</label>
+              <input class="input" id="code_postal" name="code_postal" type="text" inputmode="numeric" autocomplete="postal-code" required maxlength="5" pattern="[0-9]{5}" placeholder="67500">
+              <p class="err" id="err-code_postal"></p>
+            </div>
+            <div class="field">
+              <label for="ville">Town</label>
+              <input class="input" id="ville" name="ville" type="text" autocomplete="address-level2" required maxlength="80" placeholder="Haguenau">
+              <p class="err" id="err-ville"></p>
+            </div>
+          </div>
+          <small class="muted">Starting point of your trips to the venues. Pick your address from the list: it is checked against the French national address database, so your mileage will be accurate. You can change it in the app.</small>
+        </fieldset>
+
+        <fieldset>
+          <legend>Vehicle</legend>
+          <div class="grid3">
+            <div class="field">
+              <label for="vehicule_modele">Model</label>
+              <input class="input" id="vehicule_modele" name="vehicule_modele" type="text" required maxlength="60" placeholder="Peugeot 208">
+              <p class="err" id="err-vehicule_modele"></p>
+            </div>
+            <div class="field">
+              <label for="vehicule_conso">Fuel use L/100 km</label>
+              <input class="input" id="vehicule_conso" name="vehicule_conso" type="number" required inputmode="decimal" min="1" max="30" step="0.1" placeholder="5.6">
+              <p class="err" id="err-vehicule_conso"></p>
+            </div>
+            <div class="field">
+              <label for="vehicule_cv">Fiscal horsepower (CV)</label>
+              <input class="input" id="vehicule_cv" name="vehicule_cv" type="number" required inputmode="numeric" min="1" max="30" step="1" placeholder="5">
+              <p class="err" id="err-vehicule_cv"></p>
+            </div>
+          </div>
+          <small class="muted">Used to work out the real cost of your trips (mileage allowance scale).</small>
+        </fieldset>
+
+        <fieldset>
+          <legend>Your licence number and e-Marque key <span class="muted">(optional)</span></legend>
+          <div class="grid2">
+            <div class="field">
+              <label for="numero_licence">Licence number</label>
+              <input class="input" id="numero_licence" name="numero_licence" type="text" maxlength="30" autocomplete="off" autocapitalize="characters" placeholder="e.g. VT123456">
+            </div>
+            <div class="field">
+              <label for="emarque_v2">Your e-Marque V2 key</label>
+              <input class="input" id="emarque_v2" name="emarque_v2" type="password" maxlength="40" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="your personal key">
+              <p class="err" id="err-emarque_v2"></p>
+            </div>
+          </div>
+          <small class="muted">Your key stays personal: only you can see it, in the app (Mon espace › e-Licence). You can also add it later.</small>
+        </fieldset>
+
+        <div class="actions">
+          <button type="button" class="btn btn-ghost" data-prev>Back</button>
+          <button type="button" class="btn btn-gold" data-next>Continue</button>
+        </div>
+      </section>
+
+      <!-- STEP 4 -->
+      <section class="step-panel" data-panel="4" hidden aria-labelledby="h-4">
+        <h2 id="h-4">Last step</h2>
+        <p class="help">Check and confirm: we'll take care of the rest.</p>
+
+        <dl class="recap" id="recap" aria-label="Summary"></dl>
+
+        <label class="check">
+          <input type="checkbox" id="consent_age" name="consent_age" required>
+          <span>I am 15 or older.</span>
+        </label>
+        <p class="err" id="err-consent_age"></p>
+        <label class="check">
+          <input type="checkbox" id="consent_cgu" name="consent_cgu" required>
+          <span>I accept the <a href="https://app.referee-tracker.fr/cgu.html" target="_blank" rel="noopener">Terms of use</a> and the <a href="https://app.referee-tracker.fr/confidentialite.html" target="_blank" rel="noopener">Privacy policy</a> (in French).</span>
+        </label>
+        <p class="err" id="err-consent_cgu"></p>
+        <label class="check">
+          <input type="checkbox" id="consent_donnees" name="consent_donnees" required>
+          <span>I agree that my appointments and my evaluations are processed to set up and run my account.</span>
+        </label>
+        <p class="err" id="err-consent_donnees"></p>
+        <fieldset class="check-opt">
+          <legend>News and offers</legend>
+          <p class="hint" style="margin:2px 0 8px;font-size:13px;color:var(--muted)">You will receive Referee Tracker news and offers (at most 2 a month), by e-mail and by WhatsApp if you gave your number. You can opt out here, and at any time in Mon profil or via the link in each message.</p>
+          <label class="check">
+            <input type="checkbox" id="comm_refus" name="comm_refus">
+            <span>I do not want to receive them.</span>
+          </label>
+        </fieldset>
+
+        <div class="alert" id="alert-global" hidden role="alert"></div>
+
+        <div class="upload-progress" id="upload-progress" hidden>
+          <div class="bar"><span id="upload-bar"></span></div>
+          <p id="upload-text" aria-live="polite">Sending…</p>
+        </div>
+
+        <div class="actions">
+          <button type="button" class="btn btn-ghost" data-prev>Back</button>
+          <button type="submit" class="btn btn-gold" id="btn-envoyer">Send my request</button>
+        </div>
+      </section>
+
+      <!-- CONFIRMATION -->
+      <section class="step-panel done" data-panel="5" hidden aria-labelledby="h-5">
+        <div class="big" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h2 id="h-5">Request sent!</h2>
+        <p>We are setting up your account: you'll get an e-mail with <strong>your first-login code</strong> as soon as it's ready.</p>
+        <p class="muted" id="done-mail"></p>
+        <div class="fail" id="done-fail" hidden>
+          <div class="alert">Some files could not be uploaded:</div>
+          <ul id="done-fail-list"></ul>
+          <button type="button" class="btn btn-navy btn-sm" id="btn-retry">Retry uploading the files</button>
+        </div>
+        <p style="margin-top:24px"><a class="btn btn-ghost" href="en/">Back to home</a></p>
+      </section>
+    </form>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <strong style="color:#fff">Referee Tracker</strong><br>
+      <span class="legal">Independent non-profit project by a referee, not affiliated with any basketball governing body.</span>
+    </div>
+    <nav aria-label="Legal links">
+      <a href="https://app.referee-tracker.fr/confidentialite.html">Privacy</a>
+      <a href="https://app.referee-tracker.fr/cgu.html">Terms of use</a>
+      <a href="mailto:contact@referee-tracker.fr">contact@referee-tracker.fr</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="script.js?v=b121"></script>
+</body>
+</html>
