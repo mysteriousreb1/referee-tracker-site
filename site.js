@@ -9,6 +9,13 @@
   var top = $(".top");
   function majTop() { if (top) top.classList.toggle("solid", window.scrollY > 30); }
   window.addEventListener("scroll", majTop, { passive: true }); majTop();
+  /* Téléphone : bouton d'inscription fixe, visible après le héros et caché sur le bloc final */
+  var fixe = $(".cta-fixe"), hero = $(".hero"), fin = $(".final");
+  if (fixe && hero && "IntersectionObserver" in window) {
+    var vuHero = true, vuFin = false, maj = function () { fixe.classList.toggle("on", !vuHero && !vuFin); };
+    new IntersectionObserver(function (e) { vuHero = e[0].isIntersecting; maj(); }).observe(hero);
+    if (fin) new IntersectionObserver(function (e) { vuFin = e[0].isIntersecting; maj(); }).observe(fin);
+  }
   /* Menu téléphone : se referme après un choix */
   $$(".menu-mob a").forEach(function (l) { l.addEventListener("click", function () { var d = l.closest("details"); if (d) d.open = false; }); });
 
