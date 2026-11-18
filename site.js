@@ -99,7 +99,8 @@
   /* Calculateur d'indemnité */
   var form = $("#calc");
   if (form) {
-    var eur = function (v) { return v.toLocaleString("fr-FR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €"; };
+    var EN = document.documentElement.lang === "en";
+    var eur = function (v) { return v.toLocaleString(EN ? "en-GB" : "fr-FR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €"; };
     var affiche = {};
     function anime(el, v) {
       var de = affiche[el.id] || 0; affiche[el.id] = v;
@@ -108,11 +109,11 @@
     }
     function calc() {
       var fixe = +form.fixe.value, km = +form.km.value, taux = +form.taux.value / 100, conso = +form.conso.value / 10, prix = +form.prix.value / 100;
-      $("#oFixe").value = eur(fixe); $("#oKm").value = km + " km"; $("#oTaux").value = taux.toFixed(2).replace(".", ",") + " €/km";
-      $("#oConso").value = conso.toFixed(1).replace(".", ",") + " L/100"; $("#oPrix").value = prix.toFixed(2).replace(".", ",") + " €/L";
+      $("#oFixe").value = eur(fixe); $("#oKm").value = km + " km"; $("#oTaux").value = taux.toFixed(2).replace(".", EN ? "." : ",") + " €/km";
+      $("#oConso").value = conso.toFixed(1).replace(".", EN ? "." : ",") + " L/100"; $("#oPrix").value = prix.toFixed(2).replace(".", EN ? "." : ",") + " €/L";
       var ar = km * 2, ind = fixe + ar * taux, carb = ar * conso / 100 * prix;
       anime($("#rInd"), ind); anime($("#rKm"), ar * taux); anime($("#rCarb"), carb); anime($("#rNet"), ind - carb);
-      $("#rAr").textContent = ar + " km aller-retour";
+      $("#rAr").textContent = ar + (EN ? " km round trip" : " km aller-retour");
     }
     form.addEventListener("input", calc); calc();
   }
