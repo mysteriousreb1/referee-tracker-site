@@ -353,8 +353,8 @@
       dernierEnvoi = { inscription_id: rep.inscription_id, jeton: rep.jeton || "", uploads: rep.uploads || [] };
       // b70 — places limitées : réponse « attente » → message liste d'attente, pas d'upload.
       if (rep.attente) {
-        $("#h-5").textContent = "Tu es sur la liste d'attente";
-        $("#h-5").nextElementSibling.innerHTML = "Toutes les places de cette première vague sont prises. <strong>On te prévient par e-mail</strong> dès qu'une place se libère : rien à refaire de ton côté.";
+        $("#h-5").textContent = "Demande bien reçue";
+        $("#h-5").nextElementSibling.innerHTML = "Les accès sont ouverts progressivement. <strong>On te prévient par e-mail</strong> dès que ton accès est prêt : rien à refaire de ton côté.";
         $("#done-mail").textContent = "Confirmation envoyée à " + val("email_connexion") + ".";
         afficher(5);
         return;

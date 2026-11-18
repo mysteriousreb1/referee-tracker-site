@@ -74,6 +74,7 @@ p { margin: 0 0 1em; }
 .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 800; letter-spacing: .02em; }
 .brand img { width: 36px; height: auto; }
 .brand span { font-size: .95rem; }
+.brand img.wm { width: auto; height: 32px; }
 .nav { display: flex; align-items: center; gap: 8px; }
 .nav a { text-decoration: none; }
 
