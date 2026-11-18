@@ -356,3 +356,24 @@ footer a:hover{color:#fff}
 .guide .fig figcaption{margin-top:10px;font-size:13px;color:var(--muted);text-align:center}
 .lire{margin-top:48px;padding:24px 26px;border-radius:var(--r);background:var(--card);border:1px solid var(--line)}
 .lire h2{margin:0 0 12px!important;font-size:1.15rem!important}.lire ul{margin:0;padding-left:18px;display:grid;gap:8px}
+
+/* ===== b126 — téléphone : accueil très court, aucun glissement horizontal ===== */
+@media (max-width:760px){
+  /* sections longues masquées sur téléphone (leur contenu reste dans la page et sur ordinateur) */
+  #visite,#calculateur,#atouts,#ffbb,#guides{display:none!important}
+  /* 3 étapes : titres seuls */
+  #comment .head p,.etape p{display:none}
+  .etape{padding:14px 16px 14px 60px}.etape .n{top:12px}.etape h3{margin:6px 0}
+  /* REF CLIPS : titre, capture, bouton */
+  #refclips .head p,.rc-l{display:none}
+  /* fonctions : 2 x 4 tuiles */
+  #fonctions .head{margin-bottom:16px}
+  /* confiance : 2 x 2, titres seuls */
+  .confiance p{display:none}.confiance article{padding:14px}
+  /* FAQ : les 5 premières questions */
+  .faq details:nth-of-type(n+6){display:none}
+  .final p{font-size:14.5px}
+  section{padding:40px 0}
+}
+.menu-mob-p .menu-lang{margin-top:6px;border-top:1px solid rgba(255,255,255,.1);border-radius:0 0 12px 12px;color:var(--muted)}
+.pied-lang{color:var(--muted);text-decoration:none;font-weight:600;white-space:nowrap}.pied-lang:hover{color:var(--gold2)}
