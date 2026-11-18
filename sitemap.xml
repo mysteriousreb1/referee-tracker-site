@@ -6,6 +6,9 @@
     <image:image><image:loc>https://www.referee-tracker.fr/img/app/stats.webp</image:loc></image:image>
     <image:image><image:loc>https://www.referee-tracker.fr/img/app/pc-accueil.webp</image:loc></image:image>
   </url>
+  <url><loc>https://www.referee-tracker.fr/guides/application-arbitre-basket.html</loc><lastmod>2026-11-18</lastmod><priority>0.9</priority></url>
+  <url><loc>https://www.referee-tracker.fr/guides/suivi-indemnites-paiements-arbitre.html</loc><lastmod>2026-11-18</lastmod><priority>0.9</priority></url>
+  <url><loc>https://www.referee-tracker.fr/guides/analyse-video-arbitre-basket.html</loc><lastmod>2026-11-18</lastmod><priority>0.9</priority></url>
   <url><loc>https://www.referee-tracker.fr/guides/</loc><lastmod>2026-11-18</lastmod><priority>0.7</priority></url>
   <url><loc>https://www.referee-tracker.fr/guides/indemnites-arbitre-basket.html</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority></url>
   <url><loc>https://www.referee-tracker.fr/guides/organiser-saison-arbitre-basket.html</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority></url>
